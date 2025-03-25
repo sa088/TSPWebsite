@@ -21,7 +21,7 @@ const Header = () => {
     return (
         <header className={`${styles.header} ${isScrolled ? styles.scrolled : ""}`}>
             <div className={styles.logo}>
-                <img src={isScrolled ? TSPWhiteLogo : TSPActualLogo} alt="Company Logo" />
+                <img src={isScrolled ? TSPActualLogo : TSPWhiteLogo} alt="Company Logo" />
             </div>
             <nav className={styles.nav}>
                 <Link to="/">Company</Link>

@@ -2,13 +2,13 @@
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #FFFFFF;
+    background-color: transparent;
+    color: #FFFFFF;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 80px;
     transition: background-color 0.3s ease, color 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 100;
 
     .logo {
@@ -23,14 +23,14 @@
         gap: 50px;
 
         a {
-            color: #1E1E1E;
+            color: #FFFFFF;
             text-decoration: none;
             font-size: 14px;
             font-weight: 500;
             transition: color 0.3s ease;
 
             &:hover {
-                color: #388ECA;
+                color: #1E1E1E;
             }
         }
     }
@@ -38,7 +38,7 @@
     .contactButton {
         padding: 5px;
         border-radius: 30px;
-        border: 1px solid #1E1E1E;
+        border: 1px solid #FFFFFF;
         cursor: pointer;
 
         .contactButtonWrapper {
@@ -48,7 +48,7 @@
             gap: 10px;
             padding-left: 10px;
             border-radius: 30px;
-            color: #1E1E1E;
+            color: #FFFFFF;
             font-size: 14px;
             font-weight: 500;
             transition: all 0.3s ease;
@@ -83,25 +83,24 @@
     }
 
     &.scrolled {
-        background: transparent;
-        color: #FFFFFF;
-        box-shadow: none;
+        background-color: #FFFFFF;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
         .nav {
             a {
-                color: #FFFFFF;
+                color: #1E1E1E;
 
                 &:hover {
-                    color: #1E1E1E;
+                    color: #388ECA;
                 }
             }
         }
 
         .contactButton {
-            border-color: #FFFFFF;
+            border-color: #1E1E1E;
 
             .contactButtonWrapper {
-                color: #FFFFFF;
+                color: #1E1E1E;
             }
         }
     }

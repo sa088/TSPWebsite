@@ -1,5 +1,8 @@
 import React from "react";
 import styles from "./Home.module.scss";
+import ClientImg01 from "../../assets/images/HomeImgs/ClientImg01.svg";
+import ClientImg02 from "../../assets/images/HomeImgs/ClientImg02.svg";
+
 
 const Home = () => {
     return (
@@ -8,8 +11,7 @@ const Home = () => {
                 <div className={styles.heroFrame}>
                     <div className={styles.heroContent}>
                         <h1 className={styles.heroTitle}>
-                            TechSolutions Pro is your trusted, full-service digital & software
-                            company.
+                            TechSolutions Pro is your trusted, full-service digital & software company.
                         </h1>
                         <p className={styles.heroSubtitle}>
                             From strategy to success, we power your growth.
@@ -43,12 +45,12 @@ const Home = () => {
 
             <div className={styles.scrollContent}>
                 <div className={styles.clientsSlider}>
-                    <h2>Trusted by 500+ Clients</h2>
+                    <p className={styles.clientHeading}>Trusted by 500+ Clients</p>
                     <div className={styles.clientLogos}>
-                        <img src="/path/to/clipperz-logo.png" alt="Clipperz" />
-                        <img src="/path/to/auto-max-logo.png" alt="Auto Max" />
-                        <img src="/path/to/pixel-events-logo.png" alt="Pixel Events" />
-                        <img src="/path/to/bello-food-logo.png" alt="Bello Food" />
+                        <img src={ClientImg01} alt="Clipperz" />
+                        <img src={ClientImg02} alt="Auto Max" />
+                        <img src={ClientImg01} alt="Pixel Events" />
+                        <img src={ClientImg02} alt="Bello Food" />
                     </div>
                 </div>
 

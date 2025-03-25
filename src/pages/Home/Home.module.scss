@@ -85,13 +85,16 @@
     }
 
     .clientsSlider {
-        text-align: center;
-        padding: 2rem 0;
+        padding: 5rem 0 2rem;
         background-color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
 
-        h2 {
-            margin-bottom: 1rem;
-            color: #333;
+        .clientHeading {
+            font-size: 14px;
+            font-weight: 700;
         }
 
         .clientLogos {
@@ -100,17 +103,17 @@
             align-items: center;
             gap: 2rem;
 
-            img {
-                max-height: 50px;
-                filter: grayscale(100%);
-                opacity: 0.7;
-                transition: all 0.3s ease;
+            // img {
+            //     max-height: 50px;
+            //     filter: grayscale(100%);
+            //     opacity: 0.7;
+            //     transition: all 0.3s ease;
 
-                &:hover {
-                    filter: grayscale(0%);
-                    opacity: 1;
-                }
-            }
+            //     &:hover {
+            //         filter: grayscale(0%);
+            //         opacity: 1;
+            //     }
+            // }
         }
     }
 
