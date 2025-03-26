@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Home.module.scss";
-import ClientImg01 from "../../assets/images/HomeImgs/ClientImg01.svg";
-import ClientImg02 from "../../assets/images/HomeImgs/ClientImg02.svg";
+import ClientSlider from "../../components/HomeComponents/ClientSlider/ClientSlider";
+import WhoWeAre from "../../components/HomeComponents/WhoWeAre/WhoWeAre";
 
 
 const Home = () => {
@@ -20,38 +20,10 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* <div className={styles.scrollContent}>
-                <section className={styles.content}>
-                    <h2>Trusted by 500+ Clients</h2>
-                    <p>
-                        Our clients include Pixel Events, Bello Food, Clipperz, Auto Max, and
-                        more.
-                    </p>
-                </section>
-
-                <section className={styles.content}>
-                    <h2>Who We Are</h2>
-                    <p>Lorem ipsum is simply dummy text of the printing and typesetting industry.</p>
-                </section>
-
-                <section className={styles.content}>
-                    <h2>Driving Digital Success Across Industries</h2>
-                    <p>
-                        At TechSolutions Pro, we specialize in delivering cutting-edge digital
-                        marketing and custom software development solutions.
-                    </p>
-                </section>
-            </div> */}
-
             <div className={styles.scrollContent}>
-                <div className={styles.clientsSlider}>
-                    <p className={styles.clientHeading}>Trusted by 500+ Clients</p>
-                    <div className={styles.clientLogos}>
-                        <img src={ClientImg01} alt="Clipperz" />
-                        <img src={ClientImg02} alt="Auto Max" />
-                        <img src={ClientImg01} alt="Pixel Events" />
-                        <img src={ClientImg02} alt="Bello Food" />
-                    </div>
+                <div className="container mx-auto pt-28 pb-8 px-4 md:px-8">
+                    <ClientSlider />
+                    <WhoWeAre />
                 </div>
 
                 <div className={styles.whoWeAre}>
