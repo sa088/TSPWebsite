@@ -52,78 +52,12 @@
         margin-top: 100vh;
         z-index: 2;
         background-color: #ffffff;
-        clip-path: ellipse(110% 80% at 50% 80%);
-    }
+        clip-path: ellipse(200% 80% at 50% 80%);
 
-    .clientsSlider {
-        padding: 5rem 0 2rem;
-        background-color: #ffffff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 50px;
-
-        .clientHeading {
-            font-size: 14px;
-            font-weight: 700;
-        }
-
-        .clientLogos {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 2rem;
-        }
-    }
-
-    .whoWeAre {
-        padding: 4rem 2rem;
-        background-color: #ffffff;
-
-        .contentWrapper {
-            display: flex;
-            max-width: 1200px;
-            margin: 0 auto;
-            align-items: center;
-            gap: 2rem;
-
-            .textContent {
-                flex: 1;
-
-                h2 {
-                    color: #1a73e8;
-                    margin-bottom: 1rem;
-                }
-
-                p {
-                    color: #666;
-                    margin-bottom: 1rem;
-                }
-
-                .learnMoreBtn {
-                    background-color: #1a73e8;
-                    color: white;
-                    border: none;
-                    padding: 10px 20px;
-                    border-radius: 5px;
-                    cursor: pointer;
-                    transition: background-color 0.3s ease;
-
-                    &:hover {
-                        background-color: #1557b0;
-                    }
-                }
-            }
-
-            .imageContent {
-                flex: 1;
-
-                img {
-                    width: 100%;
-                    border-radius: 10px;
-                    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-                }
-            }
+        .discoverWrapper {
+            border-top: 1px solid #D0D0D0;
+            border-bottom: 1px solid #D0D0D0;
+            padding: 40px 0;
         }
     }
 
@@ -135,18 +69,6 @@
 
         100% {
             transform: translateX(0);
-            opacity: 1;
-        }
-    }
-
-    @keyframes slideIn {
-        from {
-            transform: translateY(20px);
-            opacity: 0;
-        }
-
-        to {
-            transform: translateY(0);
             opacity: 1;
         }
     }

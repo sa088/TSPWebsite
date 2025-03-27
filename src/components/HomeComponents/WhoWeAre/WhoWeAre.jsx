@@ -3,12 +3,12 @@ import styles from "./WhoWeAre.module.scss";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import WhoWeAreImg from "../../../assets/images/HomeImgs/WhoWeAreImg.svg";
-// import HoverGrid from "@/components/common/HoverGrid/HoverGrid";
+import HoverGrid from "@/components/common/HoverGrid/HoverGrid";
 
 const WhoWeAre = () => {
     return (
         <section className={cn(styles.whoWeAre, "pt-15 pb-12")}>
-            <div className="flex flex-col lg:flex-row">
+            <div className="flex flex-col lg:flex-row gap-y-6">
 
                 {/* Left Section (Image) */}
                 <div className={cn(styles.imageContainer, "w-full lg:w-1/4")}>
@@ -16,7 +16,7 @@ const WhoWeAre = () => {
                 </div>
 
                 {/* Right Section (Text) */}
-                <div className={cn(styles.textContainer, "w-full lg:w-2/4 px-10")}>
+                <div className={cn(styles.textContainer, "w-full lg:w-2/4 lg:px-10")}>
                     <div>
                         <p className={styles.sectionTitle}>Who We Are</p>
                     </div>
@@ -48,14 +48,9 @@ const WhoWeAre = () => {
                 </div>
 
                 {/* Decorative Squares */}
-                {/* <HoverGrid /> */}
-
-                {/* <div className={cn(styles.decorativeSquares, "w-full lg:w-1/4")}>
-                    <div className={styles.square1}></div>
-                    <div className={styles.square2}></div>
-                    <div className={styles.square3}></div>
-                    <div className={styles.square4}></div>
-                </div> */}
+                <div className="flex justify-end lg:p-8 w-full lg:w-1/4">
+                    <HoverGrid />
+                </div>
             </div>
         </section>
     );
