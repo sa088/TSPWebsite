@@ -23,7 +23,7 @@ const ExcellenceGallery = () => {
             <div className="text-center pb-8">
                 <h2 className="text-[#0F4C8F] text-[32px] font-[700]">Our Excellence</h2>
             </div>
-            <div className={styles.galleryWrapper}>
+            <div className={styles.galleryWrapper} onMouseLeave={() => setActiveIndex(0)}>
                 {images.map((item, index) => (
                     <ExcellenceCard
                         key={index}

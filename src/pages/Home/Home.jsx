@@ -4,6 +4,9 @@ import ClientSlider from "../../components/HomeComponents/ClientSlider/ClientSli
 import WhoWeAre from "../../components/HomeComponents/WhoWeAre/WhoWeAre";
 import IndustryShowcase from "@/components/HomeComponents/IndustryShowcase/IndustryShowcase";
 import ExcellenceGallery from "@/components/HomeComponents/ExcellenceGallery/ExcellenceGallery";
+import ServicesGrid from "@/components/HomeComponents/ServicesGrid/ServicesGrid";
+import Technologies from "@/components/HomeComponents/Technologies/Technologies";
+import Testimonials from "@/components/HomeComponents/Testimonials/Testimonials";
 
 
 const Home = () => {
@@ -21,7 +24,6 @@ const Home = () => {
                     </div>
                 </div>
             </section>
-
             <div className={styles.scrollContent}>
                 <div className="container mx-auto pt-28 pb-8 px-4 md:px-8">
                     <ClientSlider />
@@ -31,9 +33,10 @@ const Home = () => {
                     <IndustryShowcase />
                 </div>
                 <ExcellenceGallery />
-
+                <ServicesGrid />
+                <Technologies />
+                <Testimonials />
             </div>
-
         </div>
     );
 };
