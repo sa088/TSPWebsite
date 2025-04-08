@@ -1,0 +1,40 @@
+.googleRating {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    .ratingInfo {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        .ratingText {
+            font-size: 22px;
+            font-weight: 500;
+        }
+
+        .starRow {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 32px;
+            font-weight: 800;
+            color: #FEA500;
+
+            .ratingNumber {
+                margin-right: 10px;
+            }
+        }
+
+        .viewReviews {
+            color: #FFFFFFB2;
+            font-size: 22px;
+            font-weight: 400;
+            cursor: pointer;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

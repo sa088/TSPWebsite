@@ -7,6 +7,8 @@ import ExcellenceGallery from "@/components/HomeComponents/ExcellenceGallery/Exc
 import ServicesGrid from "@/components/HomeComponents/ServicesGrid/ServicesGrid";
 import Technologies from "@/components/HomeComponents/Technologies/Technologies";
 import Testimonials from "@/components/HomeComponents/Testimonials/Testimonials";
+import AwardsCertifications from "@/components/HomeComponents/AwardsCertifications/AwardsCertifications";
+import Location from "@/components/HomeComponents/Location/Location";
 
 
 const Home = () => {
@@ -36,6 +38,8 @@ const Home = () => {
                 <ServicesGrid />
                 <Technologies />
                 <Testimonials />
+                <AwardsCertifications />
+                <Location />
             </div>
         </div>
     );

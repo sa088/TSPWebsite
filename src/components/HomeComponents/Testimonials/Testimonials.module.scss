@@ -8,123 +8,148 @@
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-}
 
-.contentWrapper {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    max-width: 1200px;
-    margin: auto;
-}
-
-.heading {
-    h2 {
-        font-size: 2rem;
-        font-weight: bold;
-        color: #fff;
-    }
-
-    p {
-        color: #fff;
-        max-width: 700px;
+    .contentWrapper {
+        text-align: center;
+        max-width: 1500px;
         margin: auto;
+        color: #FFFFFF;
+
+        .sectionHeading {
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        .sectionDescription {
+            font-size: 18px;
+            font-weight: 400;
+            margin: 30px 0;
+        }
+
+        .ratingSection {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+
+            .sectionText {
+                font-size: 22px;
+                font-weight: 600;
+                color: #FFFFFF;
+            }
+        }
+
+        .sliderWrapper {
+            padding: 40px 0;
+
+            .slider :global(.slick-slide) {
+                padding: 120px 20px 20px;
+            }
+
+            .slider :global(.slick-dots) {
+                bottom: -60px;
+                display: flex !important;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+
+                li {
+                    width: 80px;
+                    height: 6px;
+                    margin: 0;
+
+                    button {
+                        width: 80px;
+                        height: 6px;
+                        border-radius: 6px;
+                        background: #FFFFFF;
+                        padding: 0;
+                    }
+                }
+            }
+
+            .slider :global(.slick-dots li button:before) {
+                display: none;
+            }
+
+            .slider :global(.slick-dots li.slick-active button) {
+                background-color: #0F4C8F;
+            }
+
+            .card {
+                position: relative;
+                background-color: #FFFFFF;
+                border-radius: 14px;
+                padding: 20px 20px 20px 200px;
+                height: 100%;
+                overflow: visible;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                text-align: start;
+
+                @media (max-width: 768px) {
+                    flex-direction: column;
+                    text-align: center;
+                    align-items: center;
+                }
+
+                .imageWrapper {
+                    position: absolute;
+                    left: 20px;
+                    bottom: 20px;
+                    width: 160px;
+                    height: 250px;
+                    border-radius: 20px;
+                    overflow: hidden;
+
+                    .profileImage {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+
+                .textContent {
+                    .rating {
+                        display: flex;
+                        align-items: center;
+                        gap: 5px;
+                        margin-bottom: 20px;
+
+                        .starIcon {
+                            color: #FEA500;
+                            font-size: 18px;
+                        }
+
+                        .ratingText {
+                            font-size: 16px;
+                            color: #1E1E1E;
+                            margin-left: 10px;
+                        }
+                    }
+
+                    .reviewText {
+                        font-size: 16px;
+                        font-weight: 500;
+                        color: #388ECA;
+                        margin-bottom: 20px;
+                    }
+
+                    .clientInfo {
+                        color: #1E1E1EB2;
+
+                        .clientName {
+                            font-size: 16px;
+                            font-weight: 700;
+                            margin-bottom: 3px;
+                        }
+
+                        .clientRole {
+                            font-size: 12px;
+                            font-weight: 400;
+                        }
+                    }
+                }
+            }
+        }
     }
-}
-
-.subHeading {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #fff;
-    margin: 20px 0;
-}
-
-.slider {
-    margin: 30px 0;
-}
-
-.card {
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
-}
-
-.cardContent {
-    display: flex;
-    align-items: center;
-}
-
-.imageWrapper {
-    margin-right: 15px;
-}
-
-.profileImage {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.textContent {
-    text-align: left;
-}
-
-.rating {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.starIcon {
-    color: #ffc107;
-    margin-right: 2px;
-}
-
-.reviewText {
-    color: #333;
-}
-
-.clientInfo {
-    margin-top: 10px;
-}
-
-.clientName {
-    font-weight: bold;
-}
-
-.clientRole {
-    color: gray;
-    font-size: 0.9rem;
-}
-
-.googleRating {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 30px;
-}
-
-.googleLogo {
-    width: 40px;
-    margin-right: 10px;
-}
-
-.ratingInfo {
-    text-align: left;
-}
-
-.starRow {
-    display: flex;
-    align-items: center;
-}
-
-.viewReviews {
-    color: #fff;
-    text-decoration: underline;
-    display: block;
-    margin-top: 5px;
 }

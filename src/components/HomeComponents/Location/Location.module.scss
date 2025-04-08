@@ -1,0 +1,35 @@
+.locationWrapper {
+    padding: 40px;
+
+    .locationSection {
+        max-width: 1500px;
+        margin: auto;
+        text-align: center;
+
+        .mapWrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+
+            .mapImage {
+                max-width: 100%;
+                height: auto;
+            }
+
+            .pin {
+                position: absolute;
+                transform: translate(-50%, -100%);
+            }
+
+            .pin1 {
+                top: 50%;
+                left: 63%;
+            }
+
+            .pin2 {
+                top: 32%;
+                left: 54%;
+            }
+        }
+    }
+}
