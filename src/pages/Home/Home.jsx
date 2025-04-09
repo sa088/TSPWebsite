@@ -9,6 +9,7 @@ import Technologies from "@/components/HomeComponents/Technologies/Technologies"
 import Testimonials from "@/components/HomeComponents/Testimonials/Testimonials";
 import AwardsCertifications from "@/components/HomeComponents/AwardsCertifications/AwardsCertifications";
 import Location from "@/components/HomeComponents/Location/Location";
+import ProjectInquiryForm from "@/components/HomeComponents/ProjectInquiryForm/ProjectInquiryForm";
 
 
 const Home = () => {
@@ -40,6 +41,7 @@ const Home = () => {
                 <Testimonials />
                 <AwardsCertifications />
                 <Location />
+                <ProjectInquiryForm />
             </div>
         </div>
     );
