@@ -8,7 +8,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 15px 80px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    // transition: background-color 0.3s ease, color 0.3s ease;
     z-index: 100;
 
     .logo {
@@ -33,6 +33,36 @@
                 color: #1E1E1E;
             }
         }
+
+        .dropdownContainer {
+            position: relative;
+        }
+
+        .dropdownButton {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            background: none;
+            border: none;
+            color: #FFFFFF;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: #1E1E1E;
+            }
+
+            .dropdownIcon {
+                font-size: 12px;
+                transition: transform 0.3s ease;
+            }
+
+            .rotate {
+                transform: rotate(180deg);
+            }
+        }
     }
 
     .contactButton {
@@ -40,6 +70,7 @@
         border-radius: 30px;
         border: 1px solid #FFFFFF;
         cursor: pointer;
+        background: transparent;
 
         .contactButtonWrapper {
             display: flex;
@@ -94,6 +125,14 @@
                     color: #388ECA;
                 }
             }
+
+            .dropdownButton {
+                color: #1E1E1E;
+
+                &:hover {
+                    color: #388ECA;
+                }
+            }
         }
 
         .contactButton {
@@ -101,6 +140,184 @@
 
             .contactButtonWrapper {
                 color: #1E1E1E;
+            }
+        }
+    }
+
+    &.dropdownActive {
+        background-color: transparent;
+        box-shadow: none;
+
+        .nav {
+
+            a,
+            .dropdownButton {
+                color: #FFFFFF;
+
+                &:hover {
+                    color: #D0D0D0;
+                }
+            }
+        }
+
+        .contactButton {
+            border-color: #FFFFFF;
+
+            .contactButtonWrapper {
+                color: #FFFFFF;
+
+                &::before {
+                    background-color: #D0D0D0;
+                }
+
+                .arrowIcon {
+                    background-color: #d0d0d0d9;
+                }
+            }
+        }
+    }
+}
+
+// Mega Menu Styling
+.megaMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #388ECA; // Fallback color
+    background-image: url('../../assets/images/HeaderImgs/HeaderOptionsBackground.svg');
+    background-size: cover;
+    background-position: center;
+    z-index: 20;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding-top: 80px;
+
+    .megaMenuContainer {
+        max-width: 1200px;
+        margin: 10px auto 40px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        position: relative;
+        background-color: #FFFFFF;
+        color: #1E1E1E;
+        box-shadow: 0px 1px 4px 0px #00000040;
+        border-radius: 20px;
+
+        .megaMenuCategory {
+            padding: 20px;
+            border-right: 1px solid #D0D0D0;
+            border-bottom: 1px solid #D0D0D0;
+
+            &:nth-child(3n) {
+                border-right: none;
+            }
+
+            &:nth-last-child(-n+3) {
+                border-bottom: none;
+            }
+
+            .categoryHeader {
+                margin-bottom: 10px;
+
+                .categoryTitle {
+                    font-size: 16px;
+                    font-weight: 600;
+                }
+
+                .iconContainer {
+                    margin-bottom: 10px;
+
+                    img {
+                        max-width: 100%;
+                        height: auto;
+                    }
+                }
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+
+                li {
+                    padding: 5px 0;
+
+                    .serviceLink {
+                        font-size: 14px;
+                        font-weight: 500;
+                        transition: color 0.2s ease;
+                        cursor: pointer;
+
+                        &:hover {
+                            font-weight: 400;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .solutionsContainer {
+        max-width: 1200px;
+        margin: 10px auto 40px;
+        padding: 24px;
+        background-color: #FFFFFF;
+        color: #1E1E1E;
+        box-shadow: 0px 1px 4px 0px #00000040;
+        border-radius: 20px;
+
+        .solutionsTitle {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .solutionsRow {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 24px;
+
+            .solutionPill {
+                padding: 6px 12px;
+                background-color: #388ECA66;
+                color: #1E1E1E;
+                border: none;
+                border-radius: 20px;
+                font-size: 14px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: background-color 0.2s ease;
+
+                &:hover {
+                    font-weight: 500;
+                    background-color: #388eca99;
+                }
+            }
+        }
+
+        .featuredProducts {
+            background-color: #D0D0D0;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0px 1px 4px 0px #00000040;
+
+            .featuredTitle {
+                font-size: 16px;
+                font-weight: 600;
+                margin: 5px 0px 10px;
+            }
+
+            .featuredImageContainer {
+                width: 100%;
+                height: 160px;
+
+                .featuredImage {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
             }
         }
     }

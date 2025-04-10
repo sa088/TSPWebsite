@@ -1,0 +1,94 @@
+.contactUsSection {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 60px 40px;
+
+    .contactUsWrapper {
+        padding: 30px 40px;
+        border-radius: 20px;
+        background-color: #388ECA;
+        background-image: url("../../assets/images/ContactUsImgs/ContactBgImg.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 40% center;
+
+        .contactUsForm {
+            background-color: #FFFFFF;
+            border-radius: 20px;
+            padding: 40px;
+
+            .customSelectTrigger {
+                width: 100%;
+                font-size: 16px;
+                font-weight: 500;
+                padding: 8px;
+                margin-bottom: 16px;
+                color: #388ECA;
+                border-radius: 0;
+                border: none;
+                border-bottom: 1px solid #D0D0D0;
+                box-shadow: none;
+                cursor: pointer;
+
+                svg {
+                    color: #388ECA;
+                    opacity: 1;
+                    width: 20px;
+                    height: auto;
+                }
+            }
+
+            .inputField {
+                width: 100%;
+                font-size: 16px;
+                font-weight: 500;
+                padding: 8px;
+                color: #388ECA;
+                border-radius: 0;
+                border: none;
+                border-bottom: 1px solid #D0D0D0;
+                box-shadow: none;
+            }
+
+            .inputTextarea {
+                width: 100%;
+                font-size: 16px;
+                font-weight: 500;
+                padding: 8px;
+                color: #388ECA;
+                border: 1px solid #D0D0D0;
+                border-radius: 10px;
+                box-shadow: none;
+            }
+
+            .messagebutton {
+                display: flex;
+                align-items: center;
+                gap: 40px;
+                background-color: #0F4C8F;
+                color: #FFFFFF;
+                font-size: 16px;
+                font-weight: 500;
+                padding: 10px 20px 10px 30px;
+                border-radius: 20px;
+                box-shadow: 8px 6px 4px 0px rgba(0, 0, 0, 0.2509803922);
+                cursor: pointer;
+                transition: gap 0.3s ease-in-out;
+
+                .customIcon {
+                    transform: scale(1.4);
+                    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+                }
+
+                &:hover {
+                    gap: 20px;
+                    font-weight: 600;
+
+                    .customIcon {
+                        color: #FF9D00;
+                    }
+                }
+            }
+        }
+    }
+}
