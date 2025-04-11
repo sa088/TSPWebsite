@@ -18,6 +18,10 @@ const Header = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
+    const handleContactClick = () => {
+        navigate("/contact");
+    };
+
     useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 50);
@@ -55,11 +59,14 @@ const Header = () => {
         // Close dropdown
         setActiveDropdown(null);
 
-        // Create a URL-friendly slug for both category and service
-        const categorySlug = categoryTitle.toLowerCase().replace(/\s+/g, '-');
-        const serviceSlug = serviceItem.toLowerCase().replace(/\s+/g, '-');
+        // Create a URL-friendly slug: replace spaces and slashes with "-"
+        const sanitizeSlug = (str) =>
+            str.toLowerCase().replace(/[\s/]+/g, '-');
 
-        // Navigate to the service-specific page with slugs as parameters
+        const categorySlug = sanitizeSlug(categoryTitle);
+        const serviceSlug = sanitizeSlug(serviceItem);
+
+        // Navigate to the route
         navigate(`/services/${categorySlug}/${serviceSlug}`);
     };
 
@@ -187,7 +194,7 @@ const Header = () => {
                     </div>
                     <Link to="/digital-marketing">Digital Marketing</Link>
                     <Link to="/join">Join TSP</Link>
-                    <button className={styles.contactButton}>
+                    <button className={styles.contactButton} onClick={handleContactClick}>
                         <div className={styles.contactButtonWrapper}>
                             Contact Us <FaArrowRight size={30} className={styles.arrowIcon} />
                         </div>
