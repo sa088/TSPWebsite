@@ -54,9 +54,7 @@ const Header = () => {
         };
     }, [activeDropdown]);
 
-    // Function to handle navigation to service detail page
     const handleServiceNav = (categoryTitle, serviceItem) => {
-        // Close dropdown
         setActiveDropdown(null);
 
         // Create a URL-friendly slug: replace spaces and slashes with "-"
@@ -65,20 +63,12 @@ const Header = () => {
 
         const categorySlug = sanitizeSlug(categoryTitle);
         const serviceSlug = sanitizeSlug(serviceItem);
-
-        // Navigate to the route
         navigate(`/services/${categorySlug}/${serviceSlug}`);
     };
 
-    // Function to handle navigation to solution page
     const handleSolutionNav = (solutionName) => {
-        // Close dropdown
         setActiveDropdown(null);
-
-        // Create a URL-friendly slug for the solution
         const solutionSlug = solutionName.toLowerCase().replace(/\s+/g, '-');
-
-        // Navigate to the solution-specific page
         navigate(`/solutions/${solutionSlug}`);
     };
 
@@ -142,8 +132,7 @@ const Header = () => {
             ]
         },
     ];
-
-    // Updated solutions data to match the design
+    
     const solutionsData = {
         title: "Solutions",
         options: [
@@ -170,7 +159,9 @@ const Header = () => {
         <>
             <header className={`${styles.header} ${(isScrolled || location.pathname !== "/") ? styles.scrolled : ""} ${activeDropdown ? styles.dropdownActive : ""}`}>
                 <div className={styles.logo}>
-                    <img src={((location.pathname !== "/" && !activeDropdown) || (isScrolled && !activeDropdown)) ? TSPActualLogo : TSPWhiteLogo} alt="Company Logo" />
+                    <Link to="/">
+                        <img src={((location.pathname !== "/" && !activeDropdown) || (isScrolled && !activeDropdown)) ? TSPActualLogo : TSPWhiteLogo} alt="Company Logo" />
+                    </Link>
                 </div>
                 <nav className={styles.nav}>
                     <Link to="/">Company</Link>

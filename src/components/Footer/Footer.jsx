@@ -16,6 +16,7 @@ import {
     FaTwitter,
 } from "react-icons/fa";
 import { IoIosArrowDropupCircle } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
     const totalStars = 5;
@@ -171,7 +172,9 @@ const Footer = () => {
                 {/* Bottom Bar */}
                 <div className={styles.bottomBar}>
                     <div className={styles.logo}>
-                        <img src={TSPWhiteLogo} alt="Tech Solutions Pro Ltd" />
+                        <Link to="/">
+                            <img src={TSPWhiteLogo} alt="Tech Solutions Pro Ltd" />
+                        </Link>
                     </div>
 
                     <p className={styles.copyright}>

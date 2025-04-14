@@ -1,24 +1,11 @@
 import React from "react";
 import styles from "./StatsSection.module.scss";
-import GeneralButton from "@/components/common/GeneralButton/GeneralButton";
-import { useNavigate } from "react-router-dom";
 
 const StatsSection = ({ title, stats }) => {
-    const navigate = useNavigate();
-
-    const handleContactClick = () => {
-        navigate("/contact");
-    };
-
     return (
         <div className={styles.statsContainer}>
             <div className={styles.statsContent}>
                 <p className={styles.statsTitle}>{title}</p>
-                <GeneralButton
-                    label="Contact Us Now"
-                    type="white"
-                    onClick={handleContactClick}
-                />
             </div>
 
             <div className={styles.statsGrid}>

@@ -7,6 +7,26 @@ export const servicesData = {
             description:
                 "We offer end-to-end product development services, from initiative to life design to construction, cloud integration, and lifecycle management. Leverage leading-edge technologies and innovative solutions for your products.",
         },
+        sideInfo: [
+            {
+                badge: "Blog",
+                title: "Unlocking the Power of Custom Product Development",
+                content:
+                    "Custom product development enables businesses to create solutions tailored to specific market needs.",
+            },
+            {
+                badge: "Blog",
+                title: "5 Key Strategies for Successful Product Launches",
+                content:
+                    "Learn the essential steps to ensure your product launch meets market expectations and business goals.",
+            },
+            {
+                badge: "Blog",
+                title: "How User Research Drives Innovation",
+                content:
+                    "Discover how gathering user insights can transform your product development process.",
+            },
+        ],
         infoSection: {
             title: "When does product development become crucial ?",
             blocks: [
@@ -76,6 +96,26 @@ export const servicesData = {
             description:
                 "Create tailor-made solutions that perfectly fit your business needs with our custom product development services. From concept to launch, we build digital products that drive your success.",
         },
+        sideInfo: [
+            {
+                badge: "Blog",
+                title: "Unlocking the Power of Custom Product Development",
+                content:
+                    "Custom product development enables businesses to create solutions tailored to specific market needs.",
+            },
+            {
+                badge: "Blog",
+                title: "5 Key Strategies for Successful Product Launches",
+                content:
+                    "Learn the essential steps to ensure your product launch meets market expectations and business goals.",
+            },
+            {
+                badge: "Blog",
+                title: "How User Research Drives Innovation",
+                content:
+                    "Discover how gathering user insights can transform your product development process.",
+            },
+        ],
         infoSection: {
             title: "What makes custom product development essential?",
             blocks: [
@@ -145,6 +185,26 @@ export const servicesData = {
             description:
                 "Transform your ideas into powerful software solutions with our comprehensive development services. We specialize in creating robust, scalable applications that drive business growth and efficiency.",
         },
+        sideInfo: [
+            {
+                badge: "Blog",
+                title: "Unlocking the Power of Custom Product Development",
+                content:
+                    "Custom product development enables businesses to create solutions tailored to specific market needs.",
+            },
+            {
+                badge: "Blog",
+                title: "5 Key Strategies for Successful Product Launches",
+                content:
+                    "Learn the essential steps to ensure your product launch meets market expectations and business goals.",
+            },
+            {
+                badge: "Blog",
+                title: "How User Research Drives Innovation",
+                content:
+                    "Discover how gathering user insights can transform your product development process.",
+            },
+        ],
         infoSection: {
             title:
                 "How can professional software development transform your business?",

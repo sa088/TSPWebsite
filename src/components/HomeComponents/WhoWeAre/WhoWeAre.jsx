@@ -4,8 +4,15 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import WhoWeAreImg from "../../../assets/images/HomeImgs/WhoWeAreImg.svg";
 import HoverGrid from "@/components/common/HoverGrid/HoverGrid";
+import { useNavigate } from "react-router-dom";
 
 const WhoWeAre = () => {
+    const navigate = useNavigate();
+
+    const handleContactClick = () => {
+        navigate("/contact");
+    };
+
     return (
         <section className={cn(styles.whoWeAre, "pt-15 pb-12")}>
             <div className="flex flex-col lg:flex-row gap-y-6">
@@ -32,7 +39,7 @@ const WhoWeAre = () => {
                             only five centuries, but also the leap into electronic
                             typesetting, remaining essentially unchanged.
                         </p>
-                        <Button className={styles.getToKnowbutton}>
+                        <Button className={styles.getToKnowbutton} onClick={handleContactClick}>
                             Get to Know Us
                             <span className={styles.customIcon}>
                                 <svg width="24" height="28" viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg">

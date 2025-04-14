@@ -2,9 +2,6 @@
     display: flex;
     align-items: center;
     gap: 50px;
-    background-color: #0F4C8F;
-    color: #FFFFFF;
-    font-size: 16px;
     font-weight: 500;
     padding: 10px 20px 10px 40px;
     border-radius: 20px;
@@ -23,6 +20,26 @@
 
         .customIcon {
             color: #FF9D00;
+        }
+    }
+
+    &.default {
+        background-color: #0F4C8F;
+        color: #FFFFFF;
+        font-size: 16px;
+    }
+
+    &.white {
+        background-color: #FFFFFF;
+        color: #0F4C8F;
+        font-size: 18px;
+        padding: 10px 20px;
+        box-shadow: 10px 8px 4px 0px #00000040;
+
+        &:hover {
+            .customIcon {
+                color: #0F4C8F;
+            }
         }
     }
 }

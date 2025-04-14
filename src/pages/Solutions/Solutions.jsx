@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import styles from "./Services.module.scss";
-import HeroSection from "@/components/ServicesComponents/HeroSection/HeroSection";
-import InfoBlocksSection from "@/components/ServicesComponents/InfoBlocksSection/InfoBlocksSection";
-import StatsSection from "@/components/ServicesComponents/StatsSection/StatsSection";
-import { servicesData } from "@/data/servicesData";
+import styles from "./Solutions.module.scss";
+import HeroSection from "@/components/SolutionsComponents/HeroSection/HeroSection";
+import InfoBlocksSection from "@/components/SolutionsComponents/InfoBlocksSection/InfoBlocksSection";
+import StatsSection from "@/components/SolutionsComponents/StatsSection/StatsSection";
+import { solutionsData } from "@/data/solutionsData";
 import { useParams } from "react-router-dom";
 
-const Services = () => {
-    const { category, service } = useParams();
+const Solutions = () => {
+    const { solution } = useParams();
     const [pageData, setPageData] = useState(null);
 
     useEffect(() => {
@@ -19,18 +19,9 @@ const Services = () => {
                 )
                 .join("");
         };
-        const dataKey = slugToCamelCase(service);
-        setPageData(servicesData[dataKey] || servicesData.productDevelopment);
-    }, [service]);
-
-    const slugToReadableText = (slug) => {
-        return slug
-            .split("-")
-            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-            .join(" ");
-    };
-
-    const categoryName = slugToReadableText(category);
+        const dataKey = slugToCamelCase(solution);
+        setPageData(solutionsData[dataKey] || solutionsData.msDynamics365);
+    }, [solution]);
 
     if (!pageData) {
         return (
@@ -41,9 +32,9 @@ const Services = () => {
     };
 
     return (
-        <div className={styles.servicesContainer}>
+        <div className={styles.solutionsContainer}>
             <HeroSection
-                category={categoryName}
+                category={"Solutions"}
                 title={pageData.hero.title}
                 description={pageData.hero.description}
                 sideInfo={pageData.sideInfo}
@@ -54,12 +45,9 @@ const Services = () => {
                 </h2>
                 <InfoBlocksSection blocks={pageData.infoSection.blocks} />
             </div>
-            <StatsSection
-                title={pageData.stats.title}
-                stats={pageData.stats.items}
-            />
+            <StatsSection title={pageData.stats.title} stats={pageData.stats.items} />
         </div>
     );
 };
 
-export default Services;
+export default Solutions;
