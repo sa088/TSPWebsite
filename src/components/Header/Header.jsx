@@ -132,7 +132,7 @@ const Header = () => {
             ]
         },
     ];
-    
+
     const solutionsData = {
         title: "Solutions",
         options: [
@@ -184,7 +184,7 @@ const Header = () => {
                         </button>
                     </div>
                     <Link to="/digital-marketing">Digital Marketing</Link>
-                    <Link to="/join">Join TSP</Link>
+                    <Link to="/careers">Join TSP</Link>
                     <button className={styles.contactButton} onClick={handleContactClick}>
                         <div className={styles.contactButtonWrapper}>
                             Contact Us <FaArrowRight size={30} className={styles.arrowIcon} />
