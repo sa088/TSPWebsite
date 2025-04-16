@@ -11,7 +11,6 @@ import AwardsCertifications from "@/components/HomeComponents/AwardsCertificatio
 import Location from "@/components/HomeComponents/Location/Location";
 import ProjectInquiryForm from "@/components/HomeComponents/ProjectInquiryForm/ProjectInquiryForm";
 
-
 const Home = () => {
     return (
         <div className={styles.home}>
@@ -19,7 +18,8 @@ const Home = () => {
                 <div className={styles.heroFrame}>
                     <div className={styles.heroContent}>
                         <h1 className={styles.heroTitle}>
-                            TechSolutions Pro is your trusted, full-service digital & software company.
+                            TechSolutions Pro is your trusted, full-service digital & software
+                            company.
                         </h1>
                         <p className={styles.heroSubtitle}>
                             From strategy to success, we power your growth.

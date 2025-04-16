@@ -1,24 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaArrowRight, FaChevronDown } from "react-icons/fa6";
+import { FaBars, FaTimes } from "react-icons/fa";
 import styles from "./Header.module.scss";
 import TSPActualLogo from "../../assets/logos/TSPActualLogo.svg";
 import TSPWhiteLogo from "../../assets/logos/TSPWhiteLogo.svg";
-import StrategyIcon from "../../assets/images/HeaderImgs/ServicesIcon01.svg";
-import SoftwareIcon from "../../assets/images/HeaderImgs/ServicesIcon02.svg";
-import PerformanceIcon from "../../assets/images/HeaderImgs/ServicesIcon03.svg";
-import AIIcon from "../../assets/images/HeaderImgs/ServicesIcon04.svg";
-import BusinessIcon from "../../assets/images/HeaderImgs/ServicesIcon05.svg";
-import EngagementIcon from "../../assets/images/HeaderImgs/ServicesIcon06.svg";
-import SolutionsViewImg from "../../assets/images/HeaderImgs/SolutionsViewImg.svg";
+import { servicesData, solutionsData } from "@/data/headerData";
 
 const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [activeDropdown, setActiveDropdown] = useState(null);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [mobileSubmenuOpen, setMobileSubmenuOpen] = useState(null);
     const navigate = useNavigate();
     const location = useLocation();
+    const menuRef = useRef(null);
 
     const handleContactClick = () => {
+        setMobileMenuOpen(false);
         navigate("/contact");
     };
 
@@ -32,6 +31,12 @@ const Header = () => {
         };
     }, [location.pathname]);
 
+    // Reset mobile menu state on location change
+    useEffect(() => {
+        setMobileMenuOpen(false);
+        setActiveDropdown(null);
+    }, [location.pathname]);
+
     const toggleDropdown = (dropdown) => {
         if (activeDropdown === dropdown) {
             setActiveDropdown(null);
@@ -40,26 +45,57 @@ const Header = () => {
         }
     };
 
-    // Close dropdown when clicking outside
+    const toggleMobileSubmenu = (menu) => {
+        setMobileSubmenuOpen(mobileSubmenuOpen === menu ? null : menu);
+    };
+
     useEffect(() => {
-        const handleClickOutside = (event) => {
-            if (activeDropdown && !event.target.closest(`.${styles.dropdownContainer}`) && !event.target.closest(`.${styles.megaMenu}`)) {
+        const handleResize = () => {
+            if (window.innerWidth > 991) {
+                setMobileMenuOpen(false);
+                setMobileSubmenuOpen(null);
+            } else {
                 setActiveDropdown(null);
             }
         };
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
-        document.addEventListener('mousedown', handleClickOutside);
-        return () => {
-            document.removeEventListener('mousedown', handleClickOutside);
+    // Close dropdown when clicking outside
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (
+                activeDropdown &&
+                !event.target.closest(`.${styles.dropdownContainer}`) &&
+                !event.target.closest(`.${styles.megaMenu}`)
+            ) {
+                setActiveDropdown(null);
+            }
+
+            if (
+                mobileMenuOpen &&
+                menuRef.current &&
+                !menuRef.current.contains(event.target) &&
+                !event.target.closest(`.${styles.mobileMenuToggle}`)
+            ) {
+                setMobileMenuOpen(false);
+            }
         };
-    }, [activeDropdown]);
+
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [activeDropdown, mobileMenuOpen]);
 
     const handleServiceNav = (categoryTitle, serviceItem) => {
         setActiveDropdown(null);
+        setMobileMenuOpen(false);
+        setMobileSubmenuOpen(null);
 
         // Create a URL-friendly slug: replace spaces and slashes with "-"
-        const sanitizeSlug = (str) =>
-            str.toLowerCase().replace(/[\s/]+/g, '-');
+        const sanitizeSlug = (str) => str.toLowerCase().replace(/[\s/]+/g, "-");
 
         const categorySlug = sanitizeSlug(categoryTitle);
         const serviceSlug = sanitizeSlug(serviceItem);
@@ -68,119 +104,64 @@ const Header = () => {
 
     const handleSolutionNav = (solutionName) => {
         setActiveDropdown(null);
-        const solutionSlug = solutionName.toLowerCase().replace(/\s+/g, '-');
+        setMobileMenuOpen(false);
+        setMobileSubmenuOpen(null);
+
+        const solutionSlug = solutionName.toLowerCase().replace(/\s+/g, "-");
         navigate(`/solutions/${solutionSlug}`);
     };
 
-    const servicesData = [
-        {
-            title: "Strategic Guidance",
-            icon: StrategyIcon,
-            items: [
-                "Ideation & Discovery",
-                "Market Analysis",
-                "Strategic Product Planning",
-                "UI/UX Design"
-            ]
-        },
-        {
-            title: "Software Engineering & Development",
-            icon: SoftwareIcon,
-            items: [
-                "Custom Product Development",
-                "End-to-End App Development",
-                "Application Modernization",
-                "AI Software Development",
-                "Cloud Engineering"
-            ]
-        },
-        {
-            title: "Performance optimization",
-            icon: PerformanceIcon,
-            items: [
-                "Software Assessment",
-                "Quality Assurance",
-                "Support & Maintenance"
-            ]
-        },
-        {
-            title: "AI Solutions & Innovations",
-            icon: AIIcon,
-            items: [
-                "Generative AI",
-                "Machine Learning",
-                "Chatbots & Voice Assistants",
-                "AI PoC & MVP"
-            ]
-        },
-        {
-            title: "Business Solutions",
-            icon: BusinessIcon,
-            items: [
-                "Financial Management Solutions",
-                "Talent Acquisition & HR Solutions",
-                "Brand Promotion & Digital Strategy"
-            ]
-        },
-        {
-            title: "Engagement Models",
-            icon: EngagementIcon,
-            items: [
-                "Dedicated Team",
-                "Global Development Hub",
-                "Fixed Price Projects"
-            ]
-        },
-    ];
-
-    const solutionsData = {
-        title: "Solutions",
-        options: [
-            "Work Force Management",
-            "MS Dynamics 365",
-            "ERP Next",
-            "Salesforce",
-            "Shopify",
-            "Work Force Management",
-            "MS Dynamics 365",
-            "ERP Next",
-            "Salesforce",
-            "Shopify",
-            "Work Force Management",
-            "MS Dynamics 365",
-            "ERP Next",
-            "Salesforce",
-            "Shopify",
-        ],
-        featuredImage: SolutionsViewImg,
-    };
+    const headerClass = `
+        ${styles.header} 
+        ${isScrolled || location.pathname !== "/" ? styles.scrolled : ""} 
+        ${activeDropdown ? styles.dropdownActive : ""}
+        ${mobileMenuOpen ? styles.mobileMenuActive : ""}
+    `;
 
     return (
         <>
-            <header className={`${styles.header} ${(isScrolled || location.pathname !== "/") ? styles.scrolled : ""} ${activeDropdown ? styles.dropdownActive : ""}`}>
+            <header className={headerClass}>
                 <div className={styles.logo}>
                     <Link to="/">
-                        <img src={((location.pathname !== "/" && !activeDropdown) || (isScrolled && !activeDropdown)) ? TSPActualLogo : TSPWhiteLogo} alt="Company Logo" />
+                        <img
+                            src={
+                                (location.pathname !== "/" &&
+                                    !activeDropdown &&
+                                    !mobileMenuOpen) ||
+                                    (isScrolled && !activeDropdown && !mobileMenuOpen)
+                                    ? TSPActualLogo
+                                    : TSPWhiteLogo
+                            }
+                            alt="Company Logo"
+                        />
                     </Link>
                 </div>
-                <nav className={styles.nav}>
+
+                {/* Desktop Navigation */}
+                <nav className={styles.desktopNav}>
                     <Link to="/">Company</Link>
                     <div className={styles.dropdownContainer}>
                         <button
                             className={styles.dropdownButton}
-                            onClick={() => toggleDropdown('services')}
+                            onClick={() => toggleDropdown("services")}
                         >
                             Services
-                            <FaChevronDown className={`${styles.dropdownIcon} ${activeDropdown === 'services' ? styles.rotate : ''}`} />
+                            <FaChevronDown
+                                className={`${styles.dropdownIcon} ${activeDropdown === "services" ? styles.rotate : ""
+                                    }`}
+                            />
                         </button>
                     </div>
                     <div className={styles.dropdownContainer}>
                         <button
                             className={styles.dropdownButton}
-                            onClick={() => toggleDropdown('solutions')}
+                            onClick={() => toggleDropdown("solutions")}
                         >
                             Solutions
-                            <FaChevronDown className={`${styles.dropdownIcon} ${activeDropdown === 'solutions' ? styles.rotate : ''}`} />
+                            <FaChevronDown
+                                className={`${styles.dropdownIcon} ${activeDropdown === "solutions" ? styles.rotate : ""
+                                    }`}
+                            />
                         </button>
                     </div>
                     <Link to="/digital-marketing">Digital Marketing</Link>
@@ -191,10 +172,133 @@ const Header = () => {
                         </div>
                     </button>
                 </nav>
+
+                {/* Mobile Menu Toggle */}
+                <button
+                    className={styles.mobileMenuToggle}
+                    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                    aria-label="Toggle menu"
+                >
+                    {mobileMenuOpen ? <FaTimes /> : <FaBars />}
+                </button>
             </header>
 
-            {/* Megamenu Dropdown for Services */}
-            {activeDropdown === 'services' && (
+            {/* Mobile Navigation Menu */}
+            <div
+                className={`${styles.mobileMenu} ${mobileMenuOpen ? styles.mobileMenuOpen : ""}`}
+                ref={menuRef}
+            >
+                <nav className={styles.mobileNav}>
+                    <Link to="/" className={styles.mobileNavLink}>
+                        Company
+                    </Link>
+
+                    <div className={styles.mobileDropdown}>
+                        <button
+                            className={styles.mobileDropdownToggle}
+                            onClick={() => toggleMobileSubmenu("services")}
+                        >
+                            Services
+                            <FaChevronDown
+                                className={`${styles.mobileDropdownIcon} ${mobileSubmenuOpen === "services" ? styles.rotate : ""}`}
+                            />
+                        </button>
+
+                        {mobileSubmenuOpen === "services" && (
+                            <div className={styles.mobileSubmenu}>
+                                {servicesData.map((category, index) => (
+                                    <div key={index} className={styles.mobileCategory}>
+                                        <div className={styles.mobileCategoryHeader}>
+                                            <img
+                                                src={category.icon}
+                                                alt={category.title}
+                                                className={styles.mobileCategoryIcon}
+                                            />
+                                            <h3 className={styles.mobileCategoryTitle}>
+                                                {category.title}
+                                            </h3>
+                                        </div>
+                                        <ul className={styles.mobileServicesList}>
+                                            {category.items.map((item, idx) => (
+                                                <li key={idx}>
+                                                    <button
+                                                        className={styles.mobileServiceLink}
+                                                        onClick={() =>
+                                                            handleServiceNav(category.title, item)
+                                                        }
+                                                    >
+                                                        {item}
+                                                    </button>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                ))}
+                            </div>
+                        )}
+                    </div>
+
+                    <div className={styles.mobileDropdown}>
+                        <button
+                            className={styles.mobileDropdownToggle}
+                            onClick={() => toggleMobileSubmenu("solutions")}
+                        >
+                            Solutions
+                            <FaChevronDown
+                                className={`${styles.mobileDropdownIcon} ${mobileSubmenuOpen === "solutions" ? styles.rotate : ""}`}
+                            />
+                        </button>
+
+                        {mobileSubmenuOpen === "solutions" && (
+                            <div className={styles.mobileSubmenu}>
+                                <h3 className={styles.mobileSolutionsTitle}>
+                                    {solutionsData.title}
+                                </h3>
+                                <div className={styles.mobileSolutionsGrid}>
+                                    {solutionsData.options.map((solution, index) => (
+                                        <button
+                                            key={index}
+                                            className={styles.mobileSolutionPill}
+                                            onClick={() => handleSolutionNav(solution)}
+                                        >
+                                            {solution}
+                                        </button>
+                                    ))}
+                                </div>
+                                <div className={styles.mobileFeaturedProducts}>
+                                    <h4 className={styles.mobileFeaturedTitle}>
+                                        View Our Featured Products
+                                    </h4>
+                                    <div className={styles.mobileFeaturedImageContainer}>
+                                        <img
+                                            src={solutionsData.featuredImage}
+                                            alt="Featured Products"
+                                            className={styles.mobileFeaturedImage}
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+                    </div>
+
+                    <Link to="/digital-marketing" className={styles.mobileNavLink}>
+                        Digital Marketing
+                    </Link>
+                    <Link to="/careers" className={styles.mobileNavLink}>
+                        Join TSP
+                    </Link>
+
+                    <button
+                        className={styles.mobileContactButton}
+                        onClick={handleContactClick}
+                    >
+                        Contact Us <FaArrowRight className={styles.mobileArrowIcon} />
+                    </button>
+                </nav>
+            </div>
+
+            {/* Desktop Megamenu Dropdown for Services */}
+            {!mobileMenuOpen && activeDropdown === "services" && (
                 <div className={styles.megaMenu}>
                     <div className={styles.megaMenuContainer}>
                         {servicesData.map((category, index) => (
@@ -223,8 +327,8 @@ const Header = () => {
                 </div>
             )}
 
-            {/* Megamenu Dropdown for Solutions */}
-            {activeDropdown === 'solutions' && (
+            {/* Desktop Megamenu Dropdown for Solutions */}
+            {!mobileMenuOpen && activeDropdown === "solutions" && (
                 <div className={styles.megaMenu}>
                     <div className={styles.solutionsContainer}>
                         <h3 className={styles.solutionsTitle}>{solutionsData.title}</h3>
@@ -240,9 +344,15 @@ const Header = () => {
                             ))}
                         </div>
                         <div className={styles.featuredProducts}>
-                            <h4 className={styles.featuredTitle}>View Our Featured Products</h4>
+                            <h4 className={styles.featuredTitle}>
+                                View Our Featured Products
+                            </h4>
                             <div className={styles.featuredImageContainer}>
-                                <img src={solutionsData.featuredImage} alt="Featured Products" className={styles.featuredImage} />
+                                <img
+                                    src={solutionsData.featuredImage}
+                                    alt="Featured Products"
+                                    className={styles.featuredImage}
+                                />
                             </div>
                         </div>
                     </div>
