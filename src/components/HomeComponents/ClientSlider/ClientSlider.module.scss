@@ -35,3 +35,17 @@
         }
     }
 }
+
+// Responsive Behavior - Media Queries
+@media (max-width: 991px) {
+    .clientsSlider {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 767px) {
+    .clientsSlider {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

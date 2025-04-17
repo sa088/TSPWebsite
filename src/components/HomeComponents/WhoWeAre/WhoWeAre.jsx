@@ -14,8 +14,8 @@ const WhoWeAre = () => {
     };
 
     return (
-        <section className={cn(styles.whoWeAre, "pt-15 pb-12")}>
-            <div className="flex flex-col lg:flex-row gap-y-6">
+        <section className={cn(styles.whoWeAre, "pt-10 pb-7 md:pt-15 md:pb-12")}>
+            <div className="flex flex-col lg:flex-row gap-y-10">
 
                 {/* Left Section (Image) */}
                 <div className={cn(styles.imageContainer, "w-full lg:w-1/4")}>
@@ -23,7 +23,7 @@ const WhoWeAre = () => {
                 </div>
 
                 {/* Right Section (Text) */}
-                <div className={cn(styles.textContainer, "w-full lg:w-2/4 lg:px-10")}>
+                <div className={cn(styles.textContainer, "w-full lg:w-2/4 pb-5 pe-5 lg:px-10")}>
                     <div>
                         <p className={styles.sectionTitle}>Who We Are</p>
                     </div>
@@ -32,7 +32,7 @@ const WhoWeAre = () => {
                             Lorem Ipsum is simply dummy text of the printing and typesetting
                             industry.
                         </h2>
-                        <p className="mt-4 text-[14px] font-[500]">
+                        <p className="mt-4 text-[12px] md:text-[14px] font-[500]">
                             Lorem Ipsum has been the industry's standard dummy text ever since
                             the 1500s, when an unknown printer took a galley of type and
                             scrambled it to make a type specimen book. It has survived not
@@ -55,7 +55,7 @@ const WhoWeAre = () => {
                 </div>
 
                 {/* Decorative Squares */}
-                <div className="flex justify-end lg:p-8 w-full lg:w-1/4">
+                <div className="flex justify-center lg:justify-end px-5 lg:p-8 w-full lg:w-1/4">
                     <HoverGrid />
                 </div>
             </div>

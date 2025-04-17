@@ -54,10 +54,10 @@ const ServicesGrid = () => {
 
     return (
         <div className={styles.servicesContainer}>
-            <h2 className="text-[#0F4C8F] text-[32px] font-[700] mb-3">
+            <h2 className="text-[#0F4C8F] text-[24px] md:text-[28px] lg:text-[32px] font-[700] mb-3">
                 Our Services
             </h2>
-            <p className="text-[18px] font-[600] mb-3">
+            <p className="text-[16px] lg:text-[18px] font-[600] mb-3">
                 We ensure high-quality products and maintain transparency throughout the development journey, making our clients an active part of the process.
             </p>
             <div className={styles.gridContainer}>

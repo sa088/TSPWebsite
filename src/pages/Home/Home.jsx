@@ -28,7 +28,7 @@ const Home = () => {
                 </div>
             </section>
             <div className={styles.scrollContent}>
-                <div className="container mx-auto pt-28 pb-8 px-4 md:px-8">
+                <div className="container mx-auto pt-28 pb-8 px-5 md:px-8">
                     <ClientSlider />
                     <WhoWeAre />
                 </div>

@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 
 const industries = [
     { id: 1, top: "12%", left: "11%" },
-    { id: 2, top: "18%", left: "25%" },
+    { id: 2, top: "18%", left: "23%" },
     { id: 3, top: "38%", left: "2%" },
     { id: 4, top: "78%", left: "22%" },
     { id: 5, top: "82%", left: "64%" },
