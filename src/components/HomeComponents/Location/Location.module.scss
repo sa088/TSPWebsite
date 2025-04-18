@@ -12,23 +12,64 @@
             justify-content: center;
 
             .mapImage {
+                width: 100%;
                 max-width: 100%;
+                min-height: 300px;
                 height: auto;
             }
 
             .pin {
                 position: absolute;
-                transform: translate(-50%, -100%);
+                width: 28px;
+                height: auto;
             }
 
             .pin1 {
-                top: 50%;
-                left: 63%;
+                top: 44%;
+                left: 64%;
             }
 
             .pin2 {
-                top: 32%;
+                top: 29%;
                 left: 54%;
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .locationWrapper {
+        .locationSection {
+            .mapWrapper {
+                .pin {
+                    width: 24px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .locationWrapper {
+        .locationSection {
+            .mapWrapper {
+                .pin {
+                    width: 20px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .locationWrapper {
+        padding: 30px;
+
+        .locationSection {
+            .mapWrapper {
+                .pin {
+                    width: 16px;
+                }
             }
         }
     }

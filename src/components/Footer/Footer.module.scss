@@ -40,7 +40,7 @@
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    width: 40px;
+                    min-width: 40px;
                     height: 40px;
                     background-color: #388ECA;
                     border-radius: 50%;
@@ -174,11 +174,6 @@
             align-items: center;
             gap: 20px;
 
-            @media (max-width: 768px) {
-                flex-direction: column;
-                padding: 24px;
-            }
-
             .newsletterTitle {
                 font-size: 24px;
                 font-weight: 600;
@@ -227,6 +222,7 @@
             align-items: center;
             justify-content: space-between;
             padding-top: 20px;
+            gap: 20px;
 
             .logo {
                 img {
@@ -314,20 +310,125 @@
 }
 
 // Responsive adjustments
-@media (max-width: 1024px) {
-    .contactBox {
-        margin: 0 auto 2rem;
+@media (max-width: 1280px) {
+    .footer {
+        .footerContainer {
+            .scrollBtnContainer {
+                margin-bottom: 20px;
+            }
+        }
     }
 }
 
-@media (max-width: 768px) {
-    .newsletterContainer {
-        padding: 1.25rem;
+@media (max-width: 767px) {
+    .footer {
+        padding: 30px;
+
+        .footerContainer {
+            .contactBox {
+                padding: 30px 20px;
+            }
+
+            .linkSection {
+                .sectionTitle {
+                    font-size: 20px;
+                    margin-bottom: 10px;
+                }
+            }
+
+            .newsletterContainer {
+                padding: 30px 20px;
+                flex-direction: column;
+                gap: 10px;
+
+                .newsletterTitle {
+                    font-size: 20px;
+                    white-space: normal;
+                    text-align: center;
+                }
+
+                .newsletterForm {
+                    flex-direction: column;
+
+                    .newsletterInput {
+                        padding: 8px 12px;
+                        font-size: 14px;
+                    }
+
+                    .submitBtn {
+                        align-self: flex-end;
+                    }
+                }
+            }
+
+            .bottomBar {
+                flex-direction: column;
+                text-align: center;
+
+                .copyright {
+                    font-size: 14px;
+                }
+
+                .flagsDropdownWrapper {
+                    .flagDropdown {
+                        :global {
+                            .ReactFlagsSelect-module_selectBtn__19wW7::after {
+                                font-size: 12px;
+                            }
+
+                            .ReactFlagsSelect-module_selectBtn__19wW7[aria-expanded=true]:after {
+                                font-size: 12px;
+                            }
+
+                            .ReactFlagsSelect-module_selectValue__152eS {
+                                svg {
+                                    width: 30px;
+                                    height: 21px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
 @media (max-width: 640px) {
-    .bottomBar {
-        text-align: center;
+    .footer {
+        .footerContainer {
+            .contactBox {
+                .contactItem {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 10px;
+                    margin-bottom: 20px;
+
+                    .contactText {
+                        a {
+                            font-size: 14px;
+                        }
+                    }
+                }
+
+                .googleRating {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 10px;
+
+                    .ratingInfo {
+                        align-items: flex-start;
+
+                        .ratingText {
+                            font-size: 16px;
+                        }
+
+                        .starRow {
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

@@ -31,6 +31,7 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 30px;
+            gap: 20px;
 
             .sectionText {
                 font-size: 22px;
@@ -40,10 +41,10 @@
         }
 
         .sliderWrapper {
-            padding: 40px 0;
+            padding: 20px 0;
 
             .slider :global(.slick-slide) {
-                padding: 120px 20px 20px;
+                padding: 100px 20px 20px;
             }
 
             .slider :global(.slick-dots) {
@@ -85,12 +86,6 @@
                 overflow: visible;
                 box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
                 text-align: start;
-
-                @media (max-width: 768px) {
-                    flex-direction: column;
-                    text-align: center;
-                    align-items: center;
-                }
 
                 .imageWrapper {
                     position: absolute;
@@ -146,6 +141,159 @@
                         .clientRole {
                             font-size: 12px;
                             font-weight: 400;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .testimonialsSection {
+        .contentWrapper {
+            .sectionHeading {
+                font-size: 28px;
+            }
+
+            .sectionDescription {
+                font-size: 16px;
+            }
+
+            .ratingSection {
+                flex-direction: column;
+
+                .sectionText {
+                    font-size: 20px;
+                }
+            }
+
+            .sliderWrapper {
+                .slider :global(.slick-dots) {
+                    bottom: -40px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .testimonialsSection {
+        padding: 50px 30px;
+
+        .contentWrapper {
+            .sectionHeading {
+                font-size: 24px;
+            }
+
+            .ratingSection {
+                .sectionText {
+                    font-size: 18px;
+                }
+            }
+
+            .sliderWrapper {
+                .slider :global(.slick-slide) {
+                    padding: 80px 20px 20px;
+                }
+
+                .slider :global(.slick-dots) {
+                    bottom: -30px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 640px) {
+    .testimonialsSection {
+        .contentWrapper {
+            .sliderWrapper {
+                .slider :global(.slick-slide) {
+                    padding: 20px;
+                }
+
+                .slider :global(.slick-dots) {
+                    li {
+                        width: 60px;
+
+                        button {
+                            width: 60px;
+                        }
+                    }
+                }
+
+                .card {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 20px;
+                    padding: 20px;
+                    text-align: center;
+
+                    .imageWrapper {
+                        position: static;
+                        width: 160px;
+                        height: 250px;
+                    }
+
+                    .textContent {
+                        .rating {
+                            justify-content: center;
+
+                            .starIcon {
+                                font-size: 16px;
+                            }
+
+                            .ratingText {
+                                font-size: 14px;
+                            }
+                        }
+
+                        .reviewText {
+                            font-size: 14px;
+                        }
+
+                        .clientInfo {
+                            .clientName {
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .testimonialsSection {
+        .contentWrapper {
+            .sliderWrapper {
+                .slider :global(.slick-dots) {
+                    li {
+                        width: 50px;
+
+                        button {
+                            width: 50px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 380px) {
+    .testimonialsSection {
+        .contentWrapper {
+            .sliderWrapper {
+                .slider :global(.slick-dots) {
+                    li {
+                        width: 25px;
+
+                        button {
+                            width: 25px;
                         }
                     }
                 }

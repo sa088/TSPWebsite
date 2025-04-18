@@ -7,7 +7,7 @@
         text-align: center;
 
         .connectorGrid {
-            margin-top: 3rem;
+            margin-top: 50px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -60,6 +60,61 @@
                     background-color: #0F4C8F;
                     position: absolute;
                     bottom: -4px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .awardsWrapper {
+        .awardsSection {
+            .connectorGrid {
+                .box {
+                    width: 180px;
+                    height: 210px;
+                }
+
+                .connectorLines {
+                    gap: 180px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .awardsWrapper {
+        padding: 30px;
+
+        .awardsSection {
+            .connectorGrid {
+                margin-top: 30px;
+
+                .box {
+                    width: 130px;
+                    height: 160px;
+                }
+
+                .connectorLines {
+                    gap: 130px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .awardsWrapper {
+        .awardsSection {
+            .connectorGrid {
+                .box {
+                    width: 110px;
+                    height: 140px;
+                }
+
+                .connectorLines {
+                    gap: 110px;
                 }
             }
         }

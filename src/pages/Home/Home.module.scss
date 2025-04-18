@@ -92,6 +92,10 @@
                 }
             }
         }
+
+        .scrollContent {
+            clip-path: ellipse(400% 80% at 50% 80%);
+        }
     }
 }
 
@@ -114,9 +118,29 @@
         }
 
         .scrollContent {
+            clip-path: ellipse(440% 80% at 50% 80%);
+
             .discoverWrapper {
                 padding: 20px 0;
             }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .home {
+        .hero {
+            .heroFrame {
+                .heroContent {
+                    .heroTitle {
+                        font-size: 30px;
+                    }
+                }
+            }
+        }
+
+        .scrollContent {
+            clip-path: ellipse(600% 80% at 50% 80%);
         }
     }
 }

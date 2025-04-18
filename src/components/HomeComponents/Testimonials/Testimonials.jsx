@@ -76,7 +76,7 @@ const Testimonials = () => {
         autoplaySpeed: 3000,
         responsive: [
             {
-                breakpoint: 992,
+                breakpoint: 1200,
                 settings: {
                     slidesToShow: 1,
                 },

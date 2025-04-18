@@ -38,3 +38,44 @@
         }
     }
 }
+
+@media (max-width: 991px) {
+    .googleRating {
+        .ratingInfo {
+            .ratingText {
+                font-size: 20px;
+            }
+
+            .starRow {
+                font-size: 28px;
+            }
+
+            .viewReviews {
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .googleRating {
+        flex-direction: column;
+        gap: 10px;
+
+        .ratingInfo {
+            align-items: center;
+
+            .ratingText {
+                font-size: 18px;
+            }
+
+            .starRow {
+                font-size: 24px;
+            }
+
+            .viewReviews {
+                font-size: 18px;
+            }
+        }
+    }
+}

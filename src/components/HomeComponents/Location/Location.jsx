@@ -7,10 +7,10 @@ const Location = () => {
     return (
         <div className={styles.locationWrapper}>
             <section className={styles.locationSection}>
-                <h2 className="text-[32px] font-[700] text-[#0F4C8F] mb-4">
+                <h2 className="text-[24px] md:text-[28px] lg:text-[32px] font-[700] text-[#0F4C8F] mb-4">
                     Our Location
                 </h2>
-                <p className="text-[18px] font-[600]">
+                <p className="text-[16px] lg:text-[18px] font-[600]">
                     We ensure high-quality products and maintain transparency throughout
                     the development journey, making our clients an active part of the
                     process.
@@ -19,12 +19,10 @@ const Location = () => {
                 <div className={styles.mapWrapper}>
                     <img src={MapImg} alt="World Map" className={styles.mapImage} />
                     <MapPin
-                        size={24}
                         className={`${styles.pin} ${styles.pin1}`}
                         color="green"
                     />
                     <MapPin
-                        size={24}
                         className={`${styles.pin} ${styles.pin2}`}
                         color="purple"
                     />

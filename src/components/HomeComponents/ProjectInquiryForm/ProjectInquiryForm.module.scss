@@ -11,18 +11,9 @@
         padding: 60px;
         border-radius: 20px;
 
-        @media (max-width: 768px) {
-            flex-direction: column;
-        }
-
         .leftPanel {
-            padding: 0 40px;
+            padding: 0 20px;
             width: 50%;
-
-            @media (max-width: 768px) {
-                width: 100%;
-                padding: 20px;
-            }
 
             .title {
                 font-size: 32px;
@@ -43,6 +34,7 @@
                         background-color: #FFFFFF;
                         color: #388ECA;
                         width: 2.5rem;
+                        min-width: 2.5rem;
                         height: 2.5rem;
                         border-radius: 50%;
                         display: flex;
@@ -68,11 +60,6 @@
             border-radius: 20px;
             padding: 60px 40px;
             width: 50%;
-
-            @media (max-width: 768px) {
-                width: 100%;
-                padding: 40px 20px;
-            }
 
             .formFields {
                 display: flex;
@@ -121,6 +108,107 @@
                         font-weight: 600;
                     }
                 }
+            }
+        }
+    }
+}
+
+@media (max-width: 1100px) {
+    .inquiryFormSection {
+        .formContainer {
+            padding: 30px;
+            flex-direction: column;
+
+            .leftPanel {
+                padding: 20px 20px 40px;
+                width: 100%;
+
+                .title {
+                    text-align: center;
+                }
+            }
+
+            .rightPanel {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .inquiryFormSection {
+        .formContainer {
+            .leftPanel {
+                .title {
+                    font-size: 28px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .inquiryFormSection {
+        padding: 30px;
+
+        .formContainer {
+            .leftPanel {
+                padding: 20px 10px 40px;
+
+                .title {
+                    font-size: 24px;
+                }
+
+                .steps {
+                    .step {
+                        .stepNumber {
+                            font-size: 18px;
+                        }
+
+                    }
+                }
+            }
+
+            .rightPanel {
+                padding: 40px 30px;
+
+                .formFields {
+
+                    .input,
+                    .textarea {
+                        padding: 8px 12px;
+                        font-size: 14px;
+                    }
+
+                    .sendButton {
+                        font-size: 14px;
+                        padding: 8px 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .inquiryFormSection {
+        .formContainer {
+            padding: 20px;
+
+            .leftPanel {
+                .steps {
+                    .step {
+                        gap: 10px;
+
+                        .stepText {
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+
+            .rightPanel {
+                padding: 30px 20px;
             }
         }
     }

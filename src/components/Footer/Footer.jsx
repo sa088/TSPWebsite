@@ -47,9 +47,9 @@ const Footer = () => {
                     </button>
                 </div>
 
-                <div className="flex flex-col lg:flex-row justify-between gap-x-20 mb-10">
+                <div className="flex flex-col xl:flex-row justify-between gap-x-20 gap-y-10 mb-10">
                     {/* Contact Information */}
-                    <div className={cn(styles.contactBox, "w-full lg:w-1/4")}>
+                    <div className={cn(styles.contactBox, "w-full xl:w-1/4 sm:min-w-[max-content]")}>
                         <div className={styles.contactItem}>
                             <div className={styles.iconCircle}>
                                 <FiPhoneCall size={20} />
@@ -135,7 +135,7 @@ const Footer = () => {
                     </div>
 
                     {/* Links Sections */}
-                    <div className="w-full lg:w-3/4 flex flex-col md:flex-row justify-between gap-8 px-8 py-6">
+                    <div className="w-full xl:w-3/4 flex flex-col md:flex-row justify-between gap-5 md:gap-8 px-8 md:py-6">
                         {footerLinks.map((section) => (
                             <div key={section.title} className={styles.linkSection}>
                                 <h3 className={styles.sectionTitle}>{section.title}</h3>
