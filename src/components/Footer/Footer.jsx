@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import styles from "./Footer.module.scss";
-import { footerLinks } from "./footerData";
+import { companyLinks, industries, servicesLinks } from "./footerData";
 import { cn } from "@/lib/utils";
 import ReactFlagsSelect from "react-flags-select";
 import TSPWhiteLogo from "../../assets/logos/TSPWhiteLogo.svg";
@@ -16,9 +16,10 @@ import {
     FaTwitter,
 } from "react-icons/fa";
 import { IoIosArrowDropupCircle } from "react-icons/io";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Footer = () => {
+    const navigate = useNavigate();
     const totalStars = 5;
     const rating = 4.8;
     const filledStars = Math.floor(rating);
@@ -36,6 +37,17 @@ const Footer = () => {
 
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+
+    const handleServiceNav = (serviceItem) => {
+        if (serviceItem === "Digital Media Marketing") {
+            navigate("/digital-marketing");
+            return;
+        }
+        const sanitizeSlug = (str) => str.toLowerCase().replace(/[\s/]+/g, "-");
+        const categorySlug = sanitizeSlug("Software Engineering & Development");
+        const serviceSlug = sanitizeSlug(serviceItem);
+        navigate(`/services/${categorySlug}/${serviceSlug}`);
     };
 
     return (
@@ -136,18 +148,50 @@ const Footer = () => {
 
                     {/* Links Sections */}
                     <div className="w-full xl:w-3/4 flex flex-col md:flex-row justify-between gap-5 md:gap-8 px-8 md:py-6">
-                        {footerLinks.map((section) => (
-                            <div key={section.title} className={styles.linkSection}>
-                                <h3 className={styles.sectionTitle}>{section.title}</h3>
-                                <ul className={styles.linkList}>
-                                    {section.links.map((link, index) => (
-                                        <li key={index}>
-                                            <a href={link.url}>{link.name}</a>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        ))}
+
+                        {/* Services Section */}
+                        <div className={styles.linkSection}>
+                            <h3 className={styles.sectionTitle}>{servicesLinks.title}</h3>
+                            <ul className={styles.linkList}>
+                                {servicesLinks.links.map((link, index) => (
+                                    <li key={index}>
+                                        <button
+                                            className={styles.serviceLink}
+                                            onClick={() => handleServiceNav(link.name)}
+                                        >
+                                            {link.name}
+                                        </button>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        {/* Industry Section */}
+                        <div className={styles.linkSection}>
+                            <h3 className={styles.sectionTitle}>{industries.title}</h3>
+                            <ul className={styles.linkList}>
+                                {industries.links.map((link, index) => (
+                                    <li key={index}>
+                                        <span className={styles.industryNames}>{link.name}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        {/* Company Section */}
+                        <div className={styles.linkSection}>
+                            <h3 className={styles.sectionTitle}>{companyLinks.title}</h3>
+                            <ul className={styles.linkList}>
+                                {companyLinks.links.map((link, index) => (
+                                    <li key={index}>
+                                        <a href={link.url} className={styles.serviceLink}>
+                                            {link.name}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
                     </div>
                 </div>
 

@@ -148,16 +148,30 @@
                 li {
                     margin-bottom: 8px;
 
-                    a {
+                    .serviceLink {
                         color: rgba(255, 255, 255, 0.85);
                         text-decoration: none;
-                        transition: color 0.2s ease;
                         font-size: 16px;
                         font-weight: 400;
+                        text-align: start;
+                        cursor: pointer;
+                        transition: color 0.2s ease;
 
                         &:hover {
                             color: #FFFFFF;
                             text-decoration: underline;
+                        }
+                    }
+
+                    .industryNames {
+                        color: rgba(255, 255, 255, 0.85);
+                        font-size: 16px;
+                        font-weight: 400;
+                        text-align: start;
+                        transition: color 0.2s ease;
+
+                        &:hover {
+                            color: #FFFFFF;
                         }
                     }
                 }
