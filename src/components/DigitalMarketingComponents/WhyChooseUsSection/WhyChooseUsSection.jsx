@@ -61,8 +61,8 @@ const WhyChooseUsSection = ({ sliderData }) => {
                     .slice(currentSlide, currentSlide + visibleCards)
                     .map((slide) => (
                         <div key={slide.id} className={styles.card}>
-                            <div className={styles.cardIcon}>
-                                <GiTrophyCup size={40} color="#FFFFFF" />
+                            <div className={styles.cardIconContainer}>
+                                <GiTrophyCup color="#FFFFFF" className={styles.cardIcon} />
                             </div>
                             <h3 className={styles.cardTitle}>{slide.title}</h3>
                             <p className={styles.cardContent}>{slide.content}</p>

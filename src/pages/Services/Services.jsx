@@ -49,15 +49,12 @@ const Services = () => {
                 sideInfo={pageData.sideInfo}
             />
             <div className={styles.infoSectionContainer}>
-                <h2 className="text-center text-[28px] font-[600] text-[#1E1E1E] mb-8">
+                <h2 className="text-center text-[20px] md:text-[24px] lg:text-[28px] font-[600] text-[#1E1E1E] mb-6 md:mb-8">
                     {pageData.infoSection.title}
                 </h2>
                 <InfoBlocksSection blocks={pageData.infoSection.blocks} />
             </div>
-            <StatsSection
-                title={pageData.stats.title}
-                stats={pageData.stats.items}
-            />
+            <StatsSection title={pageData.stats.title} stats={pageData.stats.items} />
         </div>
     );
 };

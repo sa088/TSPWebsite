@@ -27,7 +27,7 @@ const HeroSection = ({ category, title, description, sideInfo }) => {
         <div
             className={cn(
                 styles.heroContainer,
-                "w-full flex flex-col lg:flex-row gap-12"
+                "w-full flex flex-col lg:flex-row gap-10 md:gap-12"
             )}
         >
             <div className={cn(styles.leftPanel, "lg:w-2/3")}>
@@ -35,7 +35,7 @@ const HeroSection = ({ category, title, description, sideInfo }) => {
                     <span>{category}</span>
                 </div>
                 <h1 className={styles.title}>{title}</h1>
-                <div className="ps-6">
+                <div className="md:ps-6">
                     <p className={styles.description}>{description}</p>
                     <GeneralButton
                         label="Let’s Innovate Together"

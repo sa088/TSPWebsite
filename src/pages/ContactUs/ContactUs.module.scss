@@ -92,3 +92,59 @@
         }
     }
 }
+
+// Responsive Behavior - Media Queries
+@media (max-width: 767px) {
+    .contactUsSection {
+        padding: 40px 30px;
+
+        .contactUsWrapper {
+            padding: 30px;
+
+            .contactUsForm {
+                padding: 20px;
+
+                .customSelectTrigger {
+                    font-size: 14px;
+                    margin-bottom: 12px;
+                }
+
+                .inputField,
+                .inputTextarea {
+                    font-size: 14px;
+                }
+
+                .messagebutton {
+                    gap: 30px;
+                    font-size: 14px;
+                    padding: 10px 15px 10px 25px;
+
+                    .customIcon {
+                        transform: scale(1.2);
+                    }
+
+                    &:hover {
+                        gap: 15px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .contactUsSection {
+        .contactUsWrapper {
+            .contactUsForm {
+                .messagebutton {
+                    gap: 20px;
+                    padding: 10px 12px 10px 16px;
+
+                    &:hover {
+                        gap: 10px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -17,7 +17,7 @@ const DigitalMarketing = () => {
                 />
 
                 {/* Services Section */}
-                <div className="my-12">
+                <div className="mt-10 md:mt-12">
                     <ServicesSection servicesData={marketingData.servicesData} />
                 </div>
             </div>

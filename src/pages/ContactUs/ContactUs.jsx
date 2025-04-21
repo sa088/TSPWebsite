@@ -10,17 +10,17 @@ const ContactUs = () => {
         <div className={styles.contactUsSection}>
             <div className={`w-full flex flex-col lg:flex-row ${styles.contactUsWrapper}`}>
                 <div className="lg:w-1/2 pt-5 pb-10 lg:pe-8 lg:py-10 text-[#FFFFFF]">
-                    <h2 className="text-[22px] font-[700] mb-5 lg:mb-15">
+                    <h2 className="text-[20px] md:text-[22px] font-[700] mb-5 lg:mb-15">
                         Let’s Create Something Amazing Together!
                     </h2>
-                    <p className="text-[18px] font-[500]">
+                    <p className="text-[16px] md:text-[18px] font-[500]">
                         Don’t hesitate – drop us a line! Your next big idea could be just
                         one message away.
                     </p>
                 </div>
 
                 <div className={`lg:w-1/2 p-6 lg:p-10 ${styles.contactUsForm}`}>
-                    <h3 className="font-semibold text-lg mb-4">Let’s Connect</h3>
+                    <h3 className="text-[16px] md:text-[18px] font-[700] mb-4">Let’s Connect</h3>
                     <Select>
                         <SelectTrigger className={styles.customSelectTrigger}>
                             <SelectValue placeholder="How can we help you?" />
@@ -32,13 +32,13 @@ const ContactUs = () => {
                             <SelectItem value="support">Support</SelectItem>
                         </SelectContent>
                     </Select>
-                    <div className="mb-4">
+                    <div className="mb-3 md:mb-4">
                         <Input className={styles.inputField} placeholder="Name" />
                     </div>
-                    <div className="mb-4">
+                    <div className="mb-3 md:mb-4">
                         <Input className={styles.inputField} placeholder="Email" />
                     </div>
-                    <div className="mb-4">
+                    <div className="mb-3 md:mb-4">
                         <Input className={styles.inputField} placeholder="Phone no" />
                     </div>
                     <div className="mb-10">

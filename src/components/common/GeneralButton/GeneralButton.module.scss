@@ -43,3 +43,46 @@
         }
     }
 }
+
+// Responsive Behavior - Media Queries
+@media (max-width: 767px) {
+    .generalButton {
+        padding: 10px 20px 10px 30px;
+        gap: 30px;
+
+        .customIcon {
+            transform: scale(1.2);
+        }
+
+        &:hover {
+            gap: 15px;
+        }
+
+        &.default {
+            font-size: 14px;
+        }
+
+        &.white {
+            font-size: 16px;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .generalButton {
+        padding: 10px 10px 10px 14px;
+        gap: 20px;
+
+        &:hover {
+            gap: 10px;
+        }
+
+        &.default {
+            width: 100%;
+        }
+
+        &.white {
+            padding: 8px 14px;
+        }
+    }
+}

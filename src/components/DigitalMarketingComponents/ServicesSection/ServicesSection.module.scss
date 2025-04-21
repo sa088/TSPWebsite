@@ -73,3 +73,65 @@
         }
     }
 }
+
+// Responsive Behavior - Media Queries
+@media (max-width: 1023px) {
+    .servicesSectionContainer {
+        .sectionTitle {
+            font-size: 28px;
+        }
+
+        .serviceContent {
+            .iconContainer {
+                margin: 10px 0;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .servicesSectionContainer {
+        .sectionTitle {
+            font-size: 24px;
+        }
+
+        .servicesList {
+            .serviceItem {
+                font-size: 18px;
+            }
+        }
+
+        .serviceContent {
+            .iconContainer {
+                width: 80px;
+                height: 80px;
+            }
+
+            .serviceDescription {
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .servicesSectionContainer {
+        .servicesList {
+            .serviceItem {
+                padding: 8px 24px;
+                font-size: 16px;
+            }
+        }
+
+        .serviceContent {
+            .iconContainer {
+                width: 70px;
+                height: 70px;
+            }
+
+            .serviceDescription {
+                font-size: 18px;
+            }
+        }
+    }
+}

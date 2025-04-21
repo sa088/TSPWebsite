@@ -52,7 +52,7 @@
                 box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             }
 
-            .cardIcon {
+            .cardIconContainer {
                 width: 60px;
                 height: 60px;
                 background-color: #388ECA;
@@ -60,6 +60,11 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+
+                .cardIcon {
+                    width: 40px;
+                    height: auto;
+                }
             }
 
             .cardTitle {
@@ -76,13 +81,56 @@
     }
 }
 
-// Responsive styles
-@media (max-width: 991px) {
-    .cardsContainer {
-        flex-direction: column;
+// Responsive Behavior - Media Queries
+@media (max-width: 1023px) {
+    .whyChooseUsSectionContainer {
+        .sectionTitle {
+            font-size: 28px;
+        }
     }
+}
 
-    .card {
-        min-width: 100%;
+@media (max-width: 991px) {
+    .whyChooseUsSectionContainer {
+        .cardsContainer {
+            flex-direction: column;
+
+            .card {
+                min-width: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .whyChooseUsSectionContainer {
+        padding: 40px 30px;
+
+        .sectionTitle {
+            font-size: 24px;
+        }
+
+        .cardsContainer {
+            .card {
+                padding: 20px;
+
+                .cardIconContainer {
+                    width: 50px;
+                    height: 50px;
+
+                    .cardIcon {
+                        width: 35px;
+                    }
+                }
+
+                .cardTitle {
+                    font-size: 20px;
+                }
+
+                .cardContent {
+                    font-size: 14px;
+                }
+            }
+        }
     }
 }

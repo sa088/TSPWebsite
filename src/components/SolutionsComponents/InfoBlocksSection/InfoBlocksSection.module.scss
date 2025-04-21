@@ -1,16 +1,8 @@
 .blocksContainer {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     column-gap: 50px;
     row-gap: 30px;
-
-    @media (min-width: 640px) {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    @media (min-width: 1024px) {
-        grid-template-columns: repeat(3, 1fr);
-    }
 }
 
 .infoBlock {
@@ -47,5 +39,37 @@
         font-size: 14px;
         font-weight: 500;
         color: #1E1E1E;
+    }
+}
+
+// Responsive Behavior - Media Queries
+@media (max-width: 1023px) {
+    .blocksContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .blocksContainer {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .infoBlock {
+        .iconContainer {
+            width: 40px;
+            height: 40px;
+
+            .iconImg {
+                width: 24px;
+            }
+        }
+
+        .blockTitle {
+            font-size: 16px;
+        }
+
+        .blockDescription {
+            font-size: 12px;
+        }
     }
 }

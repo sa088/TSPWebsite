@@ -8,9 +8,6 @@ import Services from "@/pages/Services/Services";
 import Solutions from "@/pages/Solutions/Solutions";
 import DigitalMarketing from "@/pages/DigitalMarketing/DigitalMarketing";
 import Careers from "@/pages/Careers/Careers";
-// import About from '../pages/About';
-// import Services from '../pages/Services';
-// import NotFound from '../pages/NotFound';
 
 export const AppRoutes = () => {
     return (
@@ -22,8 +19,6 @@ export const AppRoutes = () => {
                 <Route path="/digital-marketing" element={<DigitalMarketing />} />
                 <Route path="/careers" element={<Careers />} />
                 <Route path="/contact" element={<ContactUs />} />
-                {/* <Route path="about" element={<About />} /> */}
-                {/* <Route path="*" element={<NotFound />} /> */}
             </Route>
         </Routes>
     );

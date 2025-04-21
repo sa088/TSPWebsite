@@ -29,7 +29,7 @@
         .description {
             font-size: 16px;
             font-weight: 500;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
             max-width: 620px;
         }
     }
@@ -77,6 +77,85 @@
                 .cardText {
                     font-size: 16px;
                     font-weight: 500;
+                }
+            }
+        }
+    }
+}
+
+// Responsive Behavior - Media Queries
+@media (max-width: 1023px) {
+    .heroContainer {
+        .rightPanel {
+            .slidesDetailCard {
+                .cardContent {
+                    max-width: 600px;
+                    margin: 20px auto 40px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .heroContainer {
+        .leftPanel {
+            padding: 120px 30px 40px;
+
+            .badge {
+                padding: 6px 10px;
+                font-size: 10px;
+            }
+
+            .title {
+                font-size: 20px;
+            }
+
+            .description {
+                font-size: 14px;
+            }
+        }
+
+        .rightPanel {
+            .slidesDetailCard {
+                padding: 30px 30px 40px;
+
+                .cardBadge {
+                    padding: 8px 20px;
+                    font-size: 10px;
+                    margin-bottom: 10px;
+                }
+
+                .cardContent {
+                    max-width: 450px;
+
+                    .cardTitle {
+                        font-size: 20px;
+                        margin-bottom: 15px;
+                    }
+
+                    .cardText {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .heroContainer {
+        .leftPanel {
+            padding: 120px 20px 40px;
+        }
+
+        .rightPanel {
+            .slidesDetailCard {
+                padding: 30px 20px;
+
+                .cardContent {
+                    max-width: 100%;
+                    margin: 15px auto 30px;
                 }
             }
         }
