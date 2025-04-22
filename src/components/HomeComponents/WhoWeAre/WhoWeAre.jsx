@@ -2,9 +2,9 @@ import React from "react";
 import styles from "./WhoWeAre.module.scss";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import WhoWeAreImg from "../../../assets/images/HomeImgs/WhoWeAreImg.svg";
 import HoverGrid from "@/components/common/HoverGrid/HoverGrid";
 import { useNavigate } from "react-router-dom";
+import { whoWeAre } from "@/data/homeData";
 
 const WhoWeAre = () => {
     const navigate = useNavigate();
@@ -19,25 +19,20 @@ const WhoWeAre = () => {
 
                 {/* Left Section (Image) */}
                 <div className={cn(styles.imageContainer, "w-full lg:w-1/4")}>
-                    <img src={WhoWeAreImg} alt="Team Meeting Img" className="w-full" />
+                    <img src={whoWeAre.image} alt="Team Meeting Img" className="w-full" />
                 </div>
 
                 {/* Right Section (Text) */}
                 <div className={cn(styles.textContainer, "w-full lg:w-2/4 pb-5 pe-5 lg:px-10")}>
                     <div>
-                        <p className={styles.sectionTitle}>Who We Are</p>
+                        <p className={styles.sectionTitle}>{whoWeAre.heading}</p>
                     </div>
                     <div>
                         <h2 className="text-[#388ECA]">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting
-                            industry.
+                            {whoWeAre.title}
                         </h2>
                         <p className="mt-4 text-[12px] md:text-[14px] font-[500]">
-                            Lorem Ipsum has been the industry's standard dummy text ever since
-                            the 1500s, when an unknown printer took a galley of type and
-                            scrambled it to make a type specimen book. It has survived not
-                            only five centuries, but also the leap into electronic
-                            typesetting, remaining essentially unchanged.
+                            {whoWeAre.description}
                         </p>
                         <Button className={styles.getToKnowbutton} onClick={handleContactClick}>
                             Get to Know Us

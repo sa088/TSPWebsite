@@ -1,70 +1,26 @@
 import React, { useState } from "react";
 import styles from "./ServicesGrid.module.scss";
-import DigitalMarketingImg from "../../../assets/images/HomeImgs/DigitalMarketingImg.svg";
 import { Button } from "@/components/ui/button";
-
-const services = [
-    {
-        id: 1,
-        title: "Digital Marketing",
-        image: DigitalMarketingImg,
-        description:
-            "As a leading digital marketing agency, we help businesses leverage the internet to expand their reach and enhance brand visibility.",
-    },
-    {
-        id: 2,
-        title: "Digital Marketing",
-        image: DigitalMarketingImg,
-        description:
-            "As a leading digital marketing agency, we help businesses leverage the internet to expand their reach and enhance brand visibility.",
-    },
-    {
-        id: 3,
-        title: "Digital Marketing",
-        image: DigitalMarketingImg,
-        description:
-            "As a leading digital marketing agency, we help businesses leverage the internet to expand their reach and enhance brand visibility.",
-    },
-    {
-        id: 4,
-        title: "Digital Marketing",
-        image: DigitalMarketingImg,
-        description:
-            "As a leading digital marketing agency, we help businesses leverage the internet to expand their reach and enhance brand visibility.",
-    },
-    {
-        id: 5,
-        title: "Digital Marketing",
-        image: DigitalMarketingImg,
-        description:
-            "As a leading digital marketing agency, we help businesses leverage the internet to expand their reach and enhance brand visibility.",
-    },
-    {
-        id: 6,
-        title: "Digital Marketing",
-        image: DigitalMarketingImg,
-        description:
-            "As a leading digital marketing agency, we help businesses leverage the internet to expand their reach and enhance brand visibility.",
-    },
-];
-
+import { servicesGrid, servicesHeader } from "@/data/homeData";
 
 const ServicesGrid = () => {
     const [hoveredCard, setHoveredCard] = useState(null);
 
     return (
         <div className={styles.servicesContainer}>
-            <h2 className="text-[#0F4C8F] text-[24px] md:text-[28px] lg:text-[32px] font-[700] mb-3">
-                Our Services
-            </h2>
-            <p className="text-[16px] lg:text-[18px] font-[600] mb-3">
-                We ensure high-quality products and maintain transparency throughout the development journey, making our clients an active part of the process.
-            </p>
+            <div className="max-w-[1540px] mx-auto">
+                <h2 className="text-[#0F4C8F] text-[24px] md:text-[28px] lg:text-[32px] font-[700] mb-3">
+                    {servicesHeader.title}
+                </h2>
+                <p className="text-[16px] lg:text-[18px] font-[600] mb-3">
+                    {servicesHeader.description}
+                </p>
+            </div>
             <div className={styles.gridContainer}>
-                {services.map((service) => (
+                {servicesGrid.map((service) => (
                     <div
                         key={service.id}
-                        className={`${styles.card} ${hoveredCard === service.id ? styles.hovered : ''}`}
+                        className={`${styles.card} ${hoveredCard === service.id ? styles.hovered : ""}`}
                         onMouseEnter={() => setHoveredCard(service.id)}
                         onMouseLeave={() => setHoveredCard(null)}
                     >
@@ -74,9 +30,7 @@ const ServicesGrid = () => {
                         </div>
                         <div className={styles.hoverContent}>
                             <h3 className={styles.hoverTitle}>{service.title}</h3>
-                            <p className={styles.hoverDescription}>
-                                {service.description}
-                            </p>
+                            <p className={styles.hoverDescription}>{service.description}</p>
                             <Button className={styles.learnMoreBtn}>
                                 Learn More
                                 <span className={styles.customIcon}>

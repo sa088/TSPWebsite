@@ -3,19 +3,20 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import styles from "./ProjectInquiryForm.module.scss";
+import { projectInquiryForm } from "@/data/homeData";
 
 const ProjectInquiryForm = () => {
     return (
         <section className={styles.inquiryFormSection}>
             <div className={styles.formContainer}>
                 <div className={styles.leftPanel}>
-                    <h2 className={styles.title}>Tell us about your project</h2>
+                    <h2 className={styles.title}>{projectInquiryForm.title}</h2>
 
                     <div className={styles.steps}>
                         <div className={styles.step}>
                             <div className={styles.stepNumber}>1</div>
                             <p className={styles.stepText}>
-                                An expert will contact you after analyzing your requirments
+                                {projectInquiryForm.step01}
                             </p>
                         </div>
 
@@ -24,7 +25,7 @@ const ProjectInquiryForm = () => {
                         <div className={styles.step}>
                             <div className={styles.stepNumber}>2</div>
                             <p className={styles.stepText}>
-                                An expert will contact you after analyzing your requirments
+                                {projectInquiryForm.step02}
                             </p>
                         </div>
 
@@ -33,7 +34,7 @@ const ProjectInquiryForm = () => {
                         <div className={styles.step}>
                             <div className={styles.stepNumber}>3</div>
                             <p className={styles.stepText}>
-                                An expert will contact you after analyzing your requirments
+                                {projectInquiryForm.step03}
                             </p>
                         </div>
                     </div>

@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import styles from "./IndustryShowcase.module.scss";
 import IndustryIcon from "../../../assets/images/HomeImgs/IndustryIcon.svg";
 import { cn } from "@/lib/utils";
+import { industryShowcase } from "@/data/homeData";
 
 const industries = [
     { id: 1, top: "12%", left: "11%" },
@@ -19,18 +20,15 @@ const IndustryShowcase = () => {
     return (
         <section className={cn(styles.industryShowcase, "container mx-auto")}>
             <div className={styles.industryContent}>
-                <p className={styles.sectionHeading}>Driving Digital Success Across Industries</p>
+                <p className={styles.sectionHeading}>{industryShowcase.heading}</p>
                 <p className={styles.sectiontext}>
-                    At TechSolutions Pro, we specialize in delivering cutting-edge digital
-                    marketing and custom software development solutions. With a proven
-                    track record of helping businesses grow, we cater to enterprises of
-                    all sizes, from startups to industry leaders.
+                    {industryShowcase.description}
                 </p>
-                <p className={styles.sectiontext}>
+                {/* <p className={styles.sectiontext}>
                     Our expertise spans various industries, including E-commerce, Finance,
                     Healthcare, Education, Real Estate, Retail, Travel, Entertainment, and
                     more.
-                </p>
+                </p> */}
                 <Button className={styles.discoverButton}>Discover Our Work</Button>
             </div>
 

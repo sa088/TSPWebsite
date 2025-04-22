@@ -1,23 +1,8 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import ReactIcon from "../../../assets/images/HomeImgs/ReactIcon.svg";
-import JSIcon from "../../../assets/images/HomeImgs/JSIcon.svg";
-import DotNetIcon from "../../../assets/images/HomeImgs/DotNetIcon.svg";
+import { technologies, technologiesHeader } from '@/data/homeData';
 
 const Technologies = () => {
-    const technologies = [
-        { name: "React JS", image: ReactIcon },
-        { name: "Java Script", image: JSIcon },
-        { name: "Dot Net", image: DotNetIcon },
-        { name: "Java Script", image: JSIcon },
-        { name: "React JS", image: ReactIcon },
-        { name: "React JS", image: ReactIcon },
-        { name: "Java Script", image: JSIcon },
-        { name: "Dot Net", image: DotNetIcon },
-        { name: "Java Script", image: JSIcon },
-        { name: "React JS", image: ReactIcon },
-    ];
-
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, amount: 0.2 });
 
@@ -53,15 +38,13 @@ const Technologies = () => {
 
     return (
         <div className="text-center p-[30px] md:p-10 overflow-x-hidden">
-            <h2 className="text-[#0F4C8F] text-[24px] md:text-[28px] lg:text-[32px] font-[700] mb-3">
-                Technologies
-            </h2>
-            <p className="text-[16px] lg:text-[18px] font-[600] mb-10">
-                We ensure high-quality products and maintain transparency throughout the
-                development journey, making our clients an active part of the process.
-            </p>
-
             <div className="max-w-[1540px] mx-auto">
+                <h2 className="text-[#0F4C8F] text-[24px] md:text-[28px] lg:text-[32px] font-[700] mb-3">
+                    {technologiesHeader.title}
+                </h2>
+                <p className="text-[16px] lg:text-[18px] font-[600] mb-10">
+                    {technologiesHeader.description}
+                </p>
                 <motion.div
                     ref={ref}
                     className="flex flex-wrap justify-center gap-5 sm:gap-6 md:gap-8 w-full"
