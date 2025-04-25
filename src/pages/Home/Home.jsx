@@ -10,6 +10,7 @@ import Testimonials from "@/components/HomeComponents/Testimonials/Testimonials"
 import AwardsCertifications from "@/components/HomeComponents/AwardsCertifications/AwardsCertifications";
 import Location from "@/components/HomeComponents/Location/Location";
 import ProjectInquiryForm from "@/components/HomeComponents/ProjectInquiryForm/ProjectInquiryForm";
+import Registered from "@/components/HomeComponents/Registered/Registered";
 
 const Home = () => {
     return (
@@ -41,6 +42,7 @@ const Home = () => {
                 <Testimonials />
                 <AwardsCertifications />
                 <Location />
+                <Registered />
                 <ProjectInquiryForm />
             </div>
         </div>

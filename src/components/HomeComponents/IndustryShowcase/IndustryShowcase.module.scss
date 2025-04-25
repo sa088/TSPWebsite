@@ -50,11 +50,20 @@
         .industryIcon {
             position: absolute;
             animation: floatUpDown 2s infinite ease-in-out alternate;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
 
             img {
                 width: 80px;
                 max-width: 100%;
                 height: auto;
+            }
+
+            .industryTitle {
+                font-size: 12px;
+                font-weight: 600;
             }
         }
     }
@@ -83,6 +92,10 @@
             .industryIcon {
                 img {
                     width: 60px;
+                }
+
+                .industryTitle {
+                    font-size: 10px;
                 }
             }
         }

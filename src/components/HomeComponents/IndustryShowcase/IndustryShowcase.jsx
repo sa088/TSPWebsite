@@ -1,29 +1,15 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import styles from "./IndustryShowcase.module.scss";
-import IndustryIcon from "../../../assets/images/HomeImgs/IndustryIcon.svg";
 import { cn } from "@/lib/utils";
-import { industryShowcase } from "@/data/homeData";
-
-const industries = [
-    { id: 1, top: "12%", left: "11%" },
-    { id: 2, top: "18%", left: "23%" },
-    { id: 3, top: "38%", left: "2%" },
-    { id: 4, top: "78%", left: "22%" },
-    { id: 5, top: "82%", left: "64%" },
-    { id: 6, top: "65%", left: "75%" },
-    { id: 7, top: "28%", left: "94%" },
-    { id: 8, top: "22%", left: "82%" },
-];
+import { industriesIcons, industryShowcase } from "@/data/homeData";
 
 const IndustryShowcase = () => {
     return (
         <section className={cn(styles.industryShowcase, "container mx-auto")}>
             <div className={styles.industryContent}>
                 <p className={styles.sectionHeading}>{industryShowcase.heading}</p>
-                <p className={styles.sectiontext}>
-                    {industryShowcase.description}
-                </p>
+                <p className={styles.sectiontext}>{industryShowcase.description}</p>
                 {/* <p className={styles.sectiontext}>
                     Our expertise spans various industries, including E-commerce, Finance,
                     Healthcare, Education, Real Estate, Retail, Travel, Entertainment, and
@@ -33,13 +19,14 @@ const IndustryShowcase = () => {
             </div>
 
             <div className={styles.industryIcons}>
-                {industries.map((industry) => (
+                {industriesIcons.map((industry) => (
                     <div
                         key={industry.id}
                         className={styles.industryIcon}
                         style={{ top: industry.top, left: industry.left }}
                     >
-                        <img src={IndustryIcon} alt={`Industry Icon ${industry.id}`} />
+                        <img src={industry.icon} alt={`Industry Icon ${industry.id}`} />
+                        <p className={styles.industryTitle}>{industry.title}</p>
                     </div>
                 ))}
             </div>

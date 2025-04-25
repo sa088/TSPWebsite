@@ -20,6 +20,14 @@ export const whoWeAre = {
 };
 
 // Industry Showcase Data
+import HealthCareIcon from "../assets/images/HomeImgs/IndustriesIcons/Icon01-HealthCare.svg";
+import LawFirmsIcon from "../assets/images/HomeImgs/IndustriesIcons/Icon02-LawFirms.svg";
+import EcommerceIcon from "../assets/images/HomeImgs/IndustriesIcons/Icon03-Ecommerce.svg";
+import FoodIcon from "../assets/images/HomeImgs/IndustriesIcons/Icon04-Food.svg";
+import CooperateIcon from "../assets/images/HomeImgs/IndustriesIcons/Icon05-Cooperate.svg";
+import AutoMobileIcon from "../assets/images/HomeImgs/IndustriesIcons/Icon06-AutoMobile.svg";
+import EventIcon from "../assets/images/HomeImgs/IndustriesIcons/Icon07-Event.svg";
+
 export const industryShowcase = {
     heading: "Driving Digital Success Across Industries",
     description: `We help industries flourish with powerful digital solutions. Whether it’s crafting 
@@ -27,6 +35,16 @@ export const industryShowcase = {
                 dynamic WordPress sites, Shopify stores, and bespoke websites, we engineer solutions that command impact. 
                 We prioritise real growth and stand poised to catapult your business ahead in the digital landscape.`,
 };
+
+export const industriesIcons = [
+    { id: 1, top: "4%", left: "30%", icon: HealthCareIcon, title: "Health Care & Life Sciences" },
+    { id: 2, top: "16%", left: "12%", icon: LawFirmsIcon, title: "Law Firms" },
+    { id: 3, top: "44%", left: "6%", icon: EcommerceIcon, title: "E-commerce" },
+    { id: 4, top: "78%", left: "22%", icon: FoodIcon, title: "Food industries" },
+    { id: 5, top: "76%", left: "70%", icon: CooperateIcon, title: "Cooperate" },
+    { id: 6, top: "52%", left: "82%", icon: AutoMobileIcon, title: "Auto Mobile Industry" },
+    { id: 7, top: "14%", left: "78%", icon: EventIcon, title: "Event Management" },
+];
 
 // Excellence Gallery Data
 import ExcellenceImg01 from "../assets/images/HomeImgs/ExcellenceImg01.svg";
@@ -215,6 +233,30 @@ export const locationHeader = {
     description: `We maintain unwavering quality and open communication at every step, fostering 
                 collaboration and keeping our clients actively involved throughout the process.`,
 };
+
+// Registered Data
+import PSEBIcon from "../assets/images/HomeImgs/RegisteredIcons/Icon01-PSEB.svg";
+import SECPIcon from "../assets/images/HomeImgs/RegisteredIcons/Icon02-SECP.svg";
+import DunBradstreetIcon from "../assets/images/HomeImgs/RegisteredIcons/Icon03-DunBradstreet.svg";
+import ICCIIcon from "../assets/images/HomeImgs/RegisteredIcons/Icon04-ICCI.svg";
+import FBRIcon from "../assets/images/HomeImgs/RegisteredIcons/Icon05-FBR.svg";
+
+export const registeredHeader = {
+    title: `Registered With`,
+    description: `Proudly registered with multiple government authorities to ensure 
+                compliance, transparency, and trust.`,
+};
+
+export const topLogos = [
+    { id: "1", icon: PSEBIcon, altText: "PSEB Logo" },
+    { id: "2", icon: SECPIcon, altText: "SECP Logo" },
+    { id: "3", icon: DunBradstreetIcon, altText: "Dun and Bradstreet Logo" },
+];
+
+export const bottomLogos = [
+    { id: "1", icon: ICCIIcon, altText: "ICCI Logo" },
+    { id: "2", icon: FBRIcon, altText: "FBR Logo" },
+];
 
 // Project Inquiry Form Data
 export const projectInquiryForm = {

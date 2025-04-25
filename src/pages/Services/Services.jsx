@@ -5,6 +5,8 @@ import InfoBlocksSection from "@/components/ServicesComponents/InfoBlocksSection
 import StatsSection from "@/components/ServicesComponents/StatsSection/StatsSection";
 import { servicesData } from "@/data/servicesData";
 import { useParams } from "react-router-dom";
+import ProcessStepsSection from "@/components/ServicesComponents/ProcessStepsSection/ProcessStepsSection";
+import TechStackSection from "@/components/ServicesComponents/TechStackSection/TechStackSection";
 
 const Services = () => {
     const { category, service } = useParams();
@@ -54,6 +56,8 @@ const Services = () => {
                 </h2>
                 <InfoBlocksSection blocks={pageData.infoSection.blocks} />
             </div>
+            <ProcessStepsSection />
+            <TechStackSection />
             <StatsSection title={pageData.stats.title} stats={pageData.stats.items} />
         </div>
     );
