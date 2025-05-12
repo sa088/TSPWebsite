@@ -16,6 +16,7 @@ const ExcellenceGallery = () => {
                     <ExcellenceCard
                         key={index}
                         image={item.src}
+                        years={item.years}
                         text={item.text}
                         isExpanded={index === activeIndex}
                         onHover={() => setActiveIndex(index)}

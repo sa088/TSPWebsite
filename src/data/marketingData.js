@@ -66,33 +66,21 @@ export const marketingData = {
     sliderData: [
         {
             id: 1,
-            title: "Stay Ahead of the Competition",
+            title: "Insight-Led, Impact-Driven",
             content:
-                "Harness Tech Solutions Pro's expertise in digital marketing to surpass your competitors and stay relevant in an ever-evolving market.",
+                "Our strategies are built on real-time data and in-depth analysis, ensuring maximum reach, stronger conversions, and a solid return on investment.",
         },
         {
             id: 2,
-            title: "Data-Driven Strategies",
+            title: "Creativity with Purpose",
             content:
-                "We leverage analytics and market research to create campaigns that deliver measurable results and exceptional ROI for your business.",
+                "We fuse compelling storytelling, striking visuals, and sharp strategy to make your brand impossible to ignore.",
         },
         {
             id: 3,
-            title: "Innovative Solutions",
+            title: "A Growth Ally, Not Just a Service",
             content:
-                "Our team develops cutting-edge digital marketing approaches that keep your brand at the forefront of industry trends and consumer attention.",
-        },
-        {
-            id: 4,
-            title: "Strategies for Success",
-            content:
-                "We leverage analytics and market research to create campaigns that deliver measurable results and exceptional ROI for your business.",
-        },
-        {
-            id: 5,
-            title: "Cutting-edge Approaches",
-            content:
-                "Our team develops cutting-edge digital marketing approaches that keep your brand at the forefront of industry trends and consumer attention.",
+                "Whether you’re a start-up making waves or an established brand aiming higher, we adapt, evolve, and drive lasting success alongside you.",
         },
     ],
 };

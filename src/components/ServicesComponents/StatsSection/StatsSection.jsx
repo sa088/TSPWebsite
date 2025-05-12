@@ -3,7 +3,29 @@ import styles from "./StatsSection.module.scss";
 import GeneralButton from "@/components/common/GeneralButton/GeneralButton";
 import { useNavigate } from "react-router-dom";
 
-const StatsSection = ({ title, stats }) => {
+const stats = {
+    title: "Minimize development time while ensuring your product stands out",
+    items: [
+        {
+            value: "15+",
+            label: "Years of ultimate experience",
+        },
+        {
+            value: "100+",
+            label: "Digital Products Delivered",
+        },
+        {
+            value: "80+",
+            label: "Team of Experts",
+        },
+        {
+            value: "96%",
+            label: "Customer Satisfaction",
+        },
+    ],
+};
+
+const StatsSection = () => {
     const navigate = useNavigate();
 
     const handleContactClick = () => {
@@ -13,7 +35,7 @@ const StatsSection = ({ title, stats }) => {
     return (
         <div className={styles.statsContainer}>
             <div className={styles.statsContent}>
-                <p className={styles.statsTitle}>{title}</p>
+                <p className={styles.statsTitle}>{stats.title}</p>
                 <GeneralButton
                     label="Contact Us Now"
                     type="white"
@@ -22,7 +44,7 @@ const StatsSection = ({ title, stats }) => {
             </div>
 
             <div className={styles.statsGrid}>
-                {stats.map((stat, index) => (
+                {stats.items.map((stat, index) => (
                     <div key={index} className={styles.statItem}>
                         <div className={styles.statValue}>{stat.value}</div>
                         <div className={styles.statLabel}>{stat.label}</div>

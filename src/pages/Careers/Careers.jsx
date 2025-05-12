@@ -62,16 +62,19 @@ const Careers = () => {
                         </div>
                     </div>
                     <div>
-                        <ul className="list-none space-y-2">
+                        <ul className="list-none space-y-4 sm:space-y-2">
                             {careersContent.whyPoints.map((point, index) => (
                                 <li key={index} className="flex items-center gap-2">
-                                    <IoCheckbox size={28} color="#00ba00" />
+                                    <IoCheckbox color="#00ba00" className="min-w-[20px] md:min-w-[28px] h-auto" />
                                     <div className="text-[16px] lg:text-[18px] font-[500] text-[#1E1E1EB2]">
                                         {point}
                                     </div>
                                 </li>
                             ))}
                         </ul>
+                    </div>
+                    <div className="text-[16px] lg:text-[18px] font-[500] mt-6">
+                        <p>{careersContent.whyDescription04}</p>
                     </div>
                 </section>
 

@@ -6,7 +6,7 @@ import ServicesFlowCube02 from "../../../assets/images/ServicesSolutionsImgs/Ser
 import ServicesFlowCube03 from "../../../assets/images/ServicesSolutionsImgs/ServicesFlowCube03.svg";
 import ServicesFlowCube04 from "../../../assets/images/ServicesSolutionsImgs/ServicesFlowCube04.svg";
 
-const ProcessStepsSection = () => {
+const ProcessStepsSection = ({ title, description, steps }) => {
     const [activeStep, setActiveStep] = useState(0);
 
     useEffect(() => {
@@ -16,29 +16,6 @@ const ProcessStepsSection = () => {
 
         return () => clearInterval(interval);
     }, []);
-
-    const steps = [
-        {
-            title: "Discovery & Planning",
-            description:
-                "We begin by understanding the client's needs and mapping out the project workflow – creating a strong strategic foundation for success.",
-        },
-        {
-            title: "UI/UX & Prototyping",
-            description:
-                "This stage involves crafting both the technical and visual aspects of the design. Interactive prototypes are created and refined based on user feedback and alignment.",
-        },
-        {
-            title: "Development & Quality Assurance",
-            description:
-                "Our developers build the product by writing clean code and integrating key features. Meanwhile, our QA team ensures the solution is reliable, secure, and bug-free.",
-        },
-        {
-            title: "Launch & Ongoing Support",
-            description:
-                "Once the product is ready, we launch it to the end-users. Based on user feedback, we continue to improve, maintain, and upgrade the solution for long-term success.",
-        },
-    ];
 
     const flowSteps = [
         { id: 1, icon: ServicesFlowCube01 },
@@ -51,12 +28,10 @@ const ProcessStepsSection = () => {
         <div className={styles.processStepsContainer}>
             <div className="text-center mb-5 md:mb-10">
                 <h2 className="text-[20px] md:text-[24px] lg:text-[28px] font-[600] mb-4">
-                    Our Streamlined Product Development Process
+                    {title}
                 </h2>
                 <p className="text-[16px] md:text-[18px] lg:text-[22px] font-[600] text-[#4A4A4A]">
-                    We craft secure, scalable solutions tailored to the unique needs of
-                    businesses worldwide. To ensure quality and efficiency, we follow a
-                    well-defined, seamless product development process outlined below:
+                    {description}
                 </p>
             </div>
 

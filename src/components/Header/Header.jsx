@@ -94,6 +94,11 @@ const Header = () => {
         setMobileMenuOpen(false);
         setMobileSubmenuOpen(null);
 
+        if (serviceItem === "Digital Marketing") {
+            navigate("/digital-marketing");
+            return;
+        }
+
         // Create a URL-friendly slug: replace spaces and slashes with "-"
         const sanitizeSlug = (str) => str.toLowerCase().replace(/[\s/]+/g, "-");
 
@@ -107,7 +112,12 @@ const Header = () => {
         setMobileMenuOpen(false);
         setMobileSubmenuOpen(null);
 
-        const solutionSlug = solutionName.toLowerCase().replace(/\s+/g, "-");
+        // Extract the name before the hyphen
+        const nameBeforeHyphen = solutionName.split("-")[0].trim();
+
+        // Convert to slug (lowercase and hyphenated)
+        const solutionSlug = nameBeforeHyphen.toLowerCase().replace(/\s+/g, "-");
+
         navigate(`/solutions/${solutionSlug}`);
     };
 
@@ -266,9 +276,6 @@ const Header = () => {
                                     ))}
                                 </div>
                                 <div className={styles.mobileFeaturedProducts}>
-                                    <h4 className={styles.mobileFeaturedTitle}>
-                                        View Our Featured Products
-                                    </h4>
                                     <div className={styles.mobileFeaturedImageContainer}>
                                         <img
                                             src={solutionsData.featuredImage}
@@ -344,9 +351,9 @@ const Header = () => {
                             ))}
                         </div>
                         <div className={styles.featuredProducts}>
-                            <h4 className={styles.featuredTitle}>
+                            {/* <h4 className={styles.featuredTitle}>
                                 View Our Featured Products
-                            </h4>
+                            </h4> */}
                             <div className={styles.featuredImageContainer}>
                                 <img
                                     src={solutionsData.featuredImage}

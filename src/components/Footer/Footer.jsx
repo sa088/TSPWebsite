@@ -1,22 +1,16 @@
 import React from "react";
 import { useState } from "react";
 import styles from "./Footer.module.scss";
-import { companyLinks, industries, servicesLinks } from "./footerData";
+import { companyLinks, footerContactBox, industries, servicesLinks } from "../../data/footerData";
 import { cn } from "@/lib/utils";
-import ReactFlagsSelect from "react-flags-select";
 import TSPWhiteLogo from "../../assets/logos/TSPWhiteLogo.svg";
 import { Mail } from "lucide-react";
 import { FiPhoneCall } from "react-icons/fi";
 import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
-import {
-    FaLinkedinIn,
-    FaFacebookF,
-    FaInstagram,
-    FaTwitter,
-} from "react-icons/fa";
 import { IoIosArrowDropupCircle } from "react-icons/io";
 import { Link, useNavigate } from "react-router-dom";
+// import ReactFlagsSelect from "react-flags-select";
 
 const Footer = () => {
     const navigate = useNavigate();
@@ -27,7 +21,7 @@ const Footer = () => {
     const emptyStars = totalStars - filledStars - (hasHalfStar ? 1 : 0);
 
     const [email, setEmail] = useState("");
-    const [selected, setSelected] = useState("GB");
+    // const [selected, setSelected] = useState("GB");
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -39,14 +33,14 @@ const Footer = () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
     };
 
-    const handleServiceNav = (serviceItem) => {
-        if (serviceItem === "Digital Media Marketing") {
+    const handleServiceNav = (serviceCategory, serviceTitle) => {
+        if (serviceTitle === "Digital Marketing") {
             navigate("/digital-marketing");
             return;
         }
         const sanitizeSlug = (str) => str.toLowerCase().replace(/[\s/]+/g, "-");
-        const categorySlug = sanitizeSlug("Software Engineering & Development");
-        const serviceSlug = sanitizeSlug(serviceItem);
+        const categorySlug = sanitizeSlug(serviceCategory);
+        const serviceSlug = sanitizeSlug(serviceTitle);
         navigate(`/services/${categorySlug}/${serviceSlug}`);
     };
 
@@ -68,8 +62,8 @@ const Footer = () => {
                             </div>
                             <div className={styles.contactText}>
                                 <p>Call Us</p>
-                                <a href="tel:+449595554514" className={styles.contactLink}>
-                                    +449595554514
+                                <a href={`tel:${footerContactBox.contactNumber}`} className={styles.contactLink}>
+                                    {footerContactBox.contactNumber}
                                 </a>
                             </div>
                         </div>
@@ -80,10 +74,10 @@ const Footer = () => {
                             <div className={styles.contactText}>
                                 <p>Email Us</p>
                                 <a
-                                    href="mailto:info@techsolutionspro.com"
+                                    href={`mailto:${footerContactBox.email}`}
                                     className={styles.contactLink}
                                 >
-                                    info@techsolutionspro.com
+                                    {footerContactBox.email}
                                 </a>
                             </div>
                         </div>
@@ -110,38 +104,20 @@ const Footer = () => {
                         <div className={styles.socialsBox}>
                             <p className={styles.socialText}>Our Socials</p>
                             <div className={styles.socialIcons}>
-                                <a
-                                    href="https://linkedin.com"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className={styles.socialIcon}
-                                >
-                                    <FaLinkedinIn size={24} />
-                                </a>
-                                <a
-                                    href="https://facebook.com"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className={styles.socialIcon}
-                                >
-                                    <FaFacebookF size={24} />
-                                </a>
-                                <a
-                                    href="https://instagram.com"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className={styles.socialIcon}
-                                >
-                                    <FaInstagram size={24} />
-                                </a>
-                                <a
-                                    href="https://twitter.com"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className={styles.socialIcon}
-                                >
-                                    <FaTwitter size={24} />
-                                </a>
+                                {footerContactBox.socialLinks?.map((link, index) => {
+                                    const IconComponent = link.Icon;
+                                    return (
+                                        <a
+                                            key={index}
+                                            href={link.href}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className={styles.socialIcon}
+                                        >
+                                            <IconComponent size={24} />
+                                        </a>
+                                    );
+                                })}
                             </div>
                         </div>
                     </div>
@@ -157,7 +133,7 @@ const Footer = () => {
                                     <li key={index}>
                                         <button
                                             className={styles.serviceLink}
-                                            onClick={() => handleServiceNav(link.name)}
+                                            onClick={() => handleServiceNav(link.category, link.name)}
                                         >
                                             {link.name}
                                         </button>
@@ -225,7 +201,7 @@ const Footer = () => {
                         © 2025 Tech Solutions Pro • All Rights Reserved
                     </p>
 
-                    <div className={styles.flagsDropdownWrapper}>
+                    {/* <div className={styles.flagsDropdownWrapper}>           // TODO: Hidden Currently
                         <ReactFlagsSelect
                             selected={selected}
                             onSelect={(code) => setSelected(code)}
@@ -234,7 +210,7 @@ const Footer = () => {
                             countries={["GB", "PK", "FR", "DE", "ES", "IT", "JP", "CN", "US"]}
                             className={styles.flagDropdown}
                         />
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </footer>

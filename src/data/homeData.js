@@ -11,7 +11,7 @@ import WhoWeAreImg from "../assets/images/HomeImgs/WhoWeAreImg.svg";
 
 export const whoWeAre = {
     heading: "Who We Are",
-    title: `Your Trusted Local Tech Partner For Modern Solutions.`,
+    title: `Our Trusted Tech Partners For Modern Solutions`,
     description: `Founded in 2019, Tech Solutions Pro has evolved into a powerhouse tech company. 
                 With offices in Nottingham and Islamabad, our team of IT specialists, designers, and developers 
                 devise cutting-edge solutions in web development and digital marketing. We amplify business growth and 
@@ -56,23 +56,28 @@ import ExcellenceImg05 from "../assets/images/HomeImgs/ExcellenceImg05.svg";
 export const excellenceGallery = [
     {
         src: ExcellenceImg01,
-        text: "10+ Years of experience in social media marketing",
+        years: "10+",
+        text: "Years of experience in social media marketing",
     },
     {
         src: ExcellenceImg02,
-        text: "10+ Years of experience in social media marketing",
+        years: "10+",
+        text: "Years of experience in social media marketing",
     },
     {
         src: ExcellenceImg03,
-        text: "10+ Years of experience in social media marketing",
+        years: "10+",
+        text: "Years of experience in social media marketing",
     },
     {
         src: ExcellenceImg04,
-        text: "10+ Years of experience in social media marketing",
+        years: "10+",
+        text: "Years of experience in social media marketing",
     },
     {
         src: ExcellenceImg05,
-        text: "10+ Years of experience in social media marketing",
+        years: "10+",
+        text: "Years of experience in social media marketing",
     },
 ];
 
@@ -89,59 +94,91 @@ export const servicesHeader = {
 export const servicesGrid = [
     {
         id: 1,
-        title: "Digital Marketing",
+        category: "Custom Development",
+        title: "Web Development",
         image: DigitalMarketingImg,
         description:
-            "As digital specialists, we craft data-driven marketing strategies that elevate brand visibility, amplify engagement, and fuel higher conversions.",
+            "Build fast, secure, and scalable websites and web apps using modern technologies tailored to your business goals.",
     },
     {
         id: 2,
-        title: "SEO",
+        category: "Custom Development",
+        title: "Mobile App Development",
         image: DigitalMarketingImg,
         description:
-            "We fine-tune websites with cutting-edge SEO techniques, boosting rankings, driving organic traffic, and securing sustained digital dominance.",
+            "Create high-performance mobile apps for iOS and Android that deliver seamless user experiences and functionality.",
     },
     {
         id: 3,
-        title: "WordPress",
+        category: "Creative Design Studio",
+        title: "UI/UX Design",
         image: DigitalMarketingImg,
         description:
-            "As a trusted WordPress development company, we engineer responsive, high-performance websites with seamless functionality and intuitive user experiences.",
+            "Design intuitive and engaging user interfaces backed by research and usability best practices to boost conversion and satisfaction.",
     },
     {
         id: 4,
-        title: "Shopify",
+        category: "Cloud & Automation",
+        title: "AI & Machine Learning",
         image: DigitalMarketingImg,
         description:
-            "Our experts construct scalable, conversion-driven Shopify stores with bespoke designs, robust integrations, and optimised performance.",
+            "Leverage AI and ML solutions to automate processes, enhance decision-making, and unlock smart insights from your data.",
     },
     {
         id: 5,
-        title: "Content Writing",
+        category: "Cloud & Automation",
+        title: "Cloud & DevOps",
         image: DigitalMarketingImg,
         description:
-            "We produce compelling, SEO-optimised content tailored for websites, blogs, and marketing campaigns, reinforcing brand narratives and strengthening audience engagement.",
+            "Set up robust cloud infrastructure, CI/CD pipelines, and scalable systems with AWS, Azure, or GCP — ensuring speed, reliability, and efficiency.",
     },
     {
         id: 6,
-        title: "App Development",
+        category: "Custom Development",
+        title: "WordPress & CMS Development",
         image: DigitalMarketingImg,
         description:
-            "As seasoned developers, we architect secure, high-calibre mobile and web applications tailored to meet precise business objectives.",
+            "Get custom WordPress or CMS websites built to match your brand, with full control over content and features.",
     },
     {
         id: 7,
-        title: "Microservices",
+        category: "E-commerce & Online Stores",
+        title: "Shopify & E-commerce Solutions",
         image: DigitalMarketingImg,
         description:
-            "We craft and deploy scalable microservices architectures, ensuring agile, efficient, and independent service delivery for peak system performance.",
+            "Launch a beautiful and fully functional online store with Shopify or custom eCommerce platforms, optimized for growth and conversions.",
     },
     {
         id: 8,
-        title: "Graphic Designing",
+        category: "Digital Growth & Strategy",
+        title: "Digital Marketing",
         image: DigitalMarketingImg,
         description:
-            "Our creative experts curate striking graphic designs, spanning branding, UX/UI, and marketing materials, forging a bold and memorable visual presence.",
+            "Drive traffic, leads, and sales with smart marketing strategies including ads, email marketing, and social media campaigns.",
+    },
+    {
+        id: 9,
+        category: "Creative Design Studio",
+        title: "Graphic Design",
+        image: DigitalMarketingImg,
+        description:
+            "Get stunning visuals that represent your brand — from logos and banners to brochures, pitch decks, and more.",
+    },
+    {
+        id: 10,
+        category: "Content & Communication",
+        title: "Technical Content Writing",
+        image: DigitalMarketingImg,
+        description:
+            "Turn complex ideas into clear, engaging, and professional content — including documentation, blogs, and whitepapers.",
+    },
+    {
+        id: 11,
+        category: "Digital Growth & Strategy",
+        title: "SEO Optimization",
+        image: DigitalMarketingImg,
+        description:
+            "Improve your website’s visibility on search engines with on-page SEO, keyword research, site audits, and performance tuning.",
     },
 ];
 

@@ -15,21 +15,26 @@ const Services = () => {
     useEffect(() => {
         const slugToCamelCase = (slug) => {
             return slug
+                .replace(/&/g, "")
+                .replace(/\s+/g, "")
                 .split("-")
                 .map((word, index) =>
-                    index === 0 ? word : word.charAt(0).toUpperCase() + word.slice(1)
+                    index === 0
+                        ? word.toLowerCase()
+                        : word.charAt(0).toUpperCase() + word.slice(1)
                 )
                 .join("");
         };
         const dataKey = slugToCamelCase(service);
-        setPageData(servicesData[dataKey] || servicesData.productDevelopment);
+        setPageData(servicesData[dataKey] || servicesData.webDevelopment);
     }, [service]);
 
     const slugToReadableText = (slug) => {
         return slug
             .split("-")
             .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-            .join(" ");
+            .join(" ")
+            .replace("E Commerce", "E-commerce");
     };
 
     const categoryName = slugToReadableText(category);
@@ -40,7 +45,7 @@ const Services = () => {
                 Loading...
             </div>
         );
-    };
+    }
 
     return (
         <div className={styles.servicesContainer}>
@@ -56,9 +61,17 @@ const Services = () => {
                 </h2>
                 <InfoBlocksSection blocks={pageData.infoSection.blocks} />
             </div>
-            <ProcessStepsSection />
-            <TechStackSection />
-            <StatsSection title={pageData.stats.title} stats={pageData.stats.items} />
+            <ProcessStepsSection
+                title={pageData.processStepsSection.title}
+                description={pageData.processStepsSection.description}
+                steps={pageData.processStepsSection.blocks}
+            />
+            <TechStackSection
+                title={pageData.techStackSection.title}
+                description={pageData.techStackSection.description}
+                techLogos={pageData.techStackSection.techLogos}
+            />
+            <StatsSection />
         </div>
     );
 };

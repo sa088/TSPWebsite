@@ -78,7 +78,6 @@
     }
 }
 
-
 .jobCard {
     .jobType {
         background-color: #D0D0D0;
@@ -155,6 +154,7 @@
     }
 }
 
+// Responsive Behavior - Media Queries
 @media (max-width: 991px) {
     .careersContainer {
         .bannerSection {
@@ -205,6 +205,34 @@
         .contactButton {
             .contactButtonWrapper {
                 gap: 10px;
+            }
+        }
+    }
+}
+
+@media (max-width: 640px) {
+    .careersContainer {
+        .bannerSection {
+            height: 40vh;
+
+            .bannerContent {
+                padding: 40px 30px;
+
+                .mainHeading {
+                    font-size: 20px;
+                }
+
+                .heroTitle {
+                    font-size: 24px;
+                }
+            }
+        }
+
+        .careersContentContainer {
+            padding: 40px 30px;
+
+            .whySection {
+                margin-bottom: 40px;
             }
         }
     }
